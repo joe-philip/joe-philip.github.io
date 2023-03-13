@@ -20,8 +20,8 @@ function Navbar() {
                         {
                             screenWidth <= 412 ?
                                 menuState === 'closed' ?
-                                    <a href='/' onClick={dropDownOpen} className='material-symbols-outlined' id='hamburger-menu'>menu</a> :
-                                    <a href='/' onClick={dropDownClose} className='material-symbols-outlined' id='hamburger-menu'>close</a>
+                                    <a href='/' onClick={dropDownOpen} className='material-symbols-outlined' id='hamburger-menu-open'>menu</a> :
+                                    <a href='/' onClick={dropDownClose} className='material-symbols-outlined' id='hamburger-menu-close'>close</a>
                                 : ''
                         }
                     </li>
