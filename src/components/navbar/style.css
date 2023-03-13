@@ -1,0 +1,39 @@
+#header {
+    background-color: var(--color-30-primary);
+    padding: 10px;
+}
+
+#navlist {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-10-primary);
+    font-size: small;
+    transition: 1s all;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    color: var(--color-10-secondary);
+}
+
+.nav-item:first-child {
+    font-weight: 800;
+    margin-right: auto;
+}
+
+.nav-item:first-child a {
+    color: var(--color-10-primary);
+    font-size: large;
+}
+
+@media only screen and (max-width: 412px) {
+    #navlist {
+        flex-direction: column;
+    }
+}
