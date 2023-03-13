@@ -32,8 +32,29 @@
     font-size: large;
 }
 
+#hamburger-menu {
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 412px) {
+    #header {
+        height: 21px;
+        overflow-y: hidden;
+        /* animation: dropDown 1s; */
+    }
+
     #navlist {
         flex-direction: column;
+    }
+
+    .nav-item:first-child {
+        margin-right: initial;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        display: block;
     }
 }
