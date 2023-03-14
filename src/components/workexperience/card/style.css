@@ -1,0 +1,73 @@
+.company-title {
+    align-self: center;
+}
+
+.company-link {
+    text-decoration: none;
+    color: var(--color-30-primary);
+    transition: 1s all;
+}
+
+.company-link:hover {
+    color: var(--color-30-secondary);
+}
+
+.work-experience-card {
+    box-shadow: 0px 0px 15px var(--color-30-primary);
+    display: inline-flex;
+    padding: 10px;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 340px;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.company-logo {
+    width: 20vw;
+    max-width: 150px;
+    height: auto;
+    align-self: center;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.other-data {
+    display: grid;
+    gap: 10px;
+}
+
+.card-key,
+.card-value {
+    display: inline;
+    line-height: 20px;
+}
+
+.card-key {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.card-value {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+@media only screen and (max-width: 696px) {
+    .other-data {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-key {
+        font-weight: 800;
+    }
+
+    .card-value {
+        width: 100%;
+    }
+}
