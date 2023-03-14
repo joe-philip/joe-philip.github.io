@@ -1,0 +1,13 @@
+#work-experience-card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 366px) {
+    #work-experience-card-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
