@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './style.css'
 
-var headerOpenAnimation = [{ height: '21px' }, { height: '137px' }];
-var headerCloseAnimation = [{ height: '137px' }, { height: '21px' }];
-var animationTiming = { duration: 1000, iterations: 1 };
+const headerOpenAnimation = [{ height: '21px' }, { height: '137px' }];
+const fadeOutAnimation = [{ opacity: 0 }, { opacity: 1 }];
+const headerCloseAnimation = [{ height: '137px' }, { height: '21px' }];
+const animationTiming = { duration: 1000, iterations: 1 };
 
 function Navbar() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -36,6 +37,7 @@ function Navbar() {
     function dropDownOpen(e) {
         e.preventDefault();
         setMenuState('opened')
+        e.target.animate(fadeOutAnimation, animationTiming);
         var header = document.getElementById('header');
         header.animate(headerOpenAnimation, animationTiming);
         header.style.overflowY = 'initial';
@@ -43,6 +45,7 @@ function Navbar() {
     }
     function dropDownClose(e) {
         e.preventDefault();
+        e.target.animate(fadeOutAnimation, animationTiming);
         setMenuState('closed')
         var header = document.getElementById('header');
         header.animate(headerCloseAnimation, { ...animationTiming, duration: 500 });
