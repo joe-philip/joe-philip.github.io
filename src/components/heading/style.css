@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 
 .heading-component {
+    margin: 25px 0;
+}
+
+.heading-component h1 {
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
     color: var(--color-30-primary);
