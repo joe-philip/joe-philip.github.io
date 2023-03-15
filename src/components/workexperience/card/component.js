@@ -14,11 +14,11 @@ function WorkExperienceCardComponent(props) {
             <h3 className='company-title'>
                 {
                     props.link ?
-                        <a className='company-link' target='_blank' href={props.link}>{props.companyTitle}</a> :
+                        <a className='company-link' target='_blank' rel='noreferrer' href={props.link}>{props.companyTitle}</a> :
                         props.companyTitle
                 }
             </h3>
-            {props.logo && <img src={props.logo} className='company-logo' />}
+            {props.logo && <img src={props.logo} alt='company-logo' className='company-logo' />}
             {generateElements(props.otherData)}
             {
                 props.rolesAndResponsibilities && <>
