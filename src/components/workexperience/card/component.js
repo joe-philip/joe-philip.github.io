@@ -14,7 +14,9 @@ function WorkExperienceCardComponent(props) {
             <h3 className='company-title'>
                 {
                     props.link ?
-                        <a className='company-link' target='_blank' rel='noreferrer' href={props.link}>{props.companyTitle}</a> :
+                        <a className='company-link' target='_blank' rel='noreferrer' href={props.link}>
+                            {props.companyTitle}
+                        </a> :
                         props.companyTitle
                 }
             </h3>

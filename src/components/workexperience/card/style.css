@@ -13,14 +13,18 @@
 }
 
 .work-experience-card {
-    box-shadow: 0px 0px 15px var(--color-30-primary);
+    box-shadow: var(--card-shadow);
     display: inline-flex;
-    padding: 10px;
+    padding: var(--card-padding);
     flex-direction: column;
-    border-radius: 10px;
-    max-width: 340px;
+    border-radius: var(--card-border-radius);
+    max-width: 35vw;
     justify-content: space-evenly;
     gap: 10px;
+}
+
+.work-experience-card * {
+    font-family: var(--card-font);
 }
 
 .company-logo {
@@ -61,7 +65,7 @@
     list-style: none;
 }
 
-.roles-and-responsibilites>li{
+.roles-and-responsibilites>li {
     margin: 5px 0;
 }
 
