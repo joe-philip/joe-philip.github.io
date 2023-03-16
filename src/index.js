@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from './components/navbar/component';
+import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -11,6 +12,7 @@ root.render(
   <React.StrictMode>
     <Navbar />
     <Experience />
+    <ProjectsComponent />
   </React.StrictMode>
 );
 
