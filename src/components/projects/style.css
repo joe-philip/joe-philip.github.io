@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.projects-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.projects-card {
+    max-width: 25vw;
+    padding: 10px;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.projects-card * {
+    font-family: var(--card-font);
+}
+
+.project-title {
+    align-self: center;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--color-30-primary);
+    transition: 1s all;
+}
+
+.project-link:hover {
+    color: var(--color-30-secondary);
+}
+
+.project-description {
+    text-indent: 4ch;
+    width: 100%;
+    text-align: justify;
+}
+
+.project-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--color-30-primary);
+    transition: 1s all;
+}
+
+.project-links a:hover {
+    text-decoration: none;
+    color: var(--color-30-secondary);
+
+}
