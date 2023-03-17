@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './style.css'
+import './style.css';
 
 const headerOpenAnimation = [{ height: '21px' }, { height: '137px' }];
 const navLinkAnimation = [{ opacity: 0 }, { opacity: 0 }, { opacity: 1 }];
@@ -39,14 +39,10 @@ function Navbar() {
     function dropDownOpen(e) {
         e.preventDefault();
         setMenuState('opened')
-        var firstElement = true;
         e.target.animate(fadeOutAnimation, animationTiming); // eslint-disable-next-line
-        [...document.getElementsByClassName('nav-link')].map(i => {
-            if (!firstElement) {
-                i.animate(navLinkAnimation, { ...animationTiming, duration: 2000 });
-            }
-            firstElement = false;
-        });
+        [...document.getElementsByClassName('nav-link')].slice(1).map(
+            i => i.animate(navLinkAnimation, { ...animationTiming, duration: 2000 })
+        );
         var header = document.getElementById('header');
         header.animate(headerOpenAnimation, animationTiming);
         header.style.overflowY = 'initial';
