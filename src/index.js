@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import AboutMeComponent from './components/aboutme/component';
 import BannerComponent from './components/banner-img/component';
 import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <Navbar />
     <BannerComponent />
+    <AboutMeComponent />
     <Experience />
     <ProjectsComponent />
   </React.StrictMode>
