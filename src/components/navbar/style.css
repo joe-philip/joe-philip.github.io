@@ -1,6 +1,8 @@
 #header {
     background-color: var(--color-30-primary);
     padding: 10px;
+    top: 0;
+    position: sticky;
 }
 
 #navlist {
@@ -41,7 +43,6 @@
     #header {
         height: 21px;
         overflow-y: hidden;
-        /* animation: dropDown 1s; */
     }
 
     #navlist {
