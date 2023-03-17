@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import BannerComponent from './components/banner-img/component';
 import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Navbar />
+    <BannerComponent />
     <Experience />
     <ProjectsComponent />
   </React.StrictMode>
