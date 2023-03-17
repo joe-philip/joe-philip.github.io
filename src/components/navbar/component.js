@@ -38,26 +38,29 @@ function Navbar() {
     );
     function dropDownOpen(e) {
         e.preventDefault();
-        setMenuState('opened')
-        e.target.animate(fadeOutAnimation, animationTiming); // eslint-disable-next-line
-        [...document.getElementsByClassName('nav-link')].slice(1).map(
-            i => i.animate(navLinkAnimation, { ...animationTiming, duration: 2000 })
-        );
         var header = document.getElementById('header');
+        setMenuState('opened')
+        e.target.animate(fadeOutAnimation, animationTiming);
+        animateNavLinks();
         header.animate(headerOpenAnimation, animationTiming);
         header.style.overflowY = 'initial';
         header.style.height = 'auto';
     }
     function dropDownClose(e) {
         e.preventDefault();
+        var header = document.getElementById('header');
         e.target.animate(fadeOutAnimation, animationTiming);
         setMenuState('closed')
-        var header = document.getElementById('header');
         header.animate(headerCloseAnimation, { ...animationTiming, duration: 500 });
         header.style.overflowY = 'hidden';
         header.style.height = '21px';
     }
 }
 
+function animateNavLinks() { // eslint-disable-next-line
+    [...document.getElementsByClassName('nav-link')].slice(1).map(
+        i => i.animate(navLinkAnimation, { ...animationTiming, duration: 2000 })
+    );
+}
 
 export default Navbar;

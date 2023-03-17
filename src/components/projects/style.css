@@ -7,7 +7,7 @@
 }
 
 .projects-card {
-    max-width: 25vw;
+    max-width: 20vw;
     padding: 10px;
     box-shadow: var(--card-shadow);
     border-radius: var(--card-border-radius);
@@ -59,4 +59,16 @@
     text-decoration: none;
     color: var(--color-30-secondary);
 
+}
+
+@media only screen and (max-width:610px) {
+    .projects-card {
+        max-width: 50vw;
+    }
+}
+
+@media only screen and (max-width:336px) {
+    .projects-card {
+        max-width: 80vw;
+    }
 }
