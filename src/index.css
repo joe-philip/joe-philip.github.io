@@ -12,6 +12,10 @@
   --card-font: 'Fira Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
