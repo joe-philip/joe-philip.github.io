@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AboutMeComponent from './components/aboutme/component';
 import BannerComponent from './components/banner-img/component';
+import Footer from './components/footer/component';
 import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
@@ -17,6 +18,7 @@ root.render(
     <AboutMeComponent />
     <Experience />
     <ProjectsComponent />
+    <Footer />
   </React.StrictMode>
 );
 
