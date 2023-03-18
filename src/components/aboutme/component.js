@@ -32,6 +32,41 @@ function AboutMeComponent() {
                                 <li>PostgreSQL</li>
                             </ul>
                         </div>
+                        <div className='socials'>
+                            <h3 className='socials-title'>Socials</h3>
+                            <ul className='socials-list'>
+                                <li>
+                                    <a href='https://www.instagram.com/riderbones/' target='_blank'>
+                                        <ion-icon name="logo-instagram"></ion-icon>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='https://www.facebook.com/unpredictableupshifts/' target='_blank'>
+                                        <ion-icon name="logo-facebook"></ion-icon>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='https://github.com/joe-philip' target='_blank'>
+                                        <ion-icon name="logo-github"></ion-icon>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='https://gitlab.com/joe-philip' target='_blank'>
+                                        <ion-icon name="logo-gitlab"></ion-icon>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='https://www.linkedin.com/in/joe-philip/' target='_blank'>
+                                        <ion-icon name="logo-linkedin"></ion-icon>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='https://twitter.com/joephilip95' target='_blank'>
+                                        <ion-icon name="logo-twitter"></ion-icon>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className='about-me-section-2'>
                         <h3>About me</h3>
