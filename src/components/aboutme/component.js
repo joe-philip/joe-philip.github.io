@@ -9,7 +9,9 @@ function AboutMeComponent() {
             <div className='about-me-card-container'>
                 <div className='about-me-card'>
                     <div className='about-me-section-1'>
-                        <img src={image} alt='img' className='about-me-img' />
+                        <div className='about-me-img-container'>
+                            <img src={image} alt='img' className='about-me-img' />
+                        </div>
                         <div className='about-me-info'>
                             <span className='key'>Name:</span><span className='val'>Joe Philip</span>
                             <span className='key'>Role:</span><span className='val'>Python Developer</span>
