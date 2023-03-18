@@ -65,13 +65,18 @@ function AboutMeComponent() {
                                         <ion-icon name='logo-twitter'></ion-icon>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href='https://wa.me/919633689769' target='_blank' rel='noreferrer'>
+                                        <ion-icon name="logo-whatsapp"></ion-icon>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div className='about-me-section-2'>
                         <h3>About me</h3>
                         <p className='about-me-intro'>
-                            Hello, I'm Joe Philip, a skilled software developer with a passion for creating innovative solutions to complex problems. With 2+ years of experience in <b>Python</b>. I am specialized in <b>web development</b> and have successfully completed fair amount projects as part of working with a team. As a highly motivated and detail-oriented developer, I thrive in challenging environments and love to collaborate with cross-functional teams to achieve project goals. When I'm not coding, I enjoy spending my time travelling. I'm excited to continue my journey as a software developer and help organizations achieve their technological aspirations.
+                            Hello, I'm Joe Philip, a skilled software developer with a passion for creating innovative solutions to complex problems. With 2+ years of experience in <b>Python</b>, I am specialized in <b>web development</b> and have successfully completed fair amount of projects as part of working with a team. As a highly motivated and detail-oriented developer, I thrive in challenging environments and love to collaborate with cross-functional teams to achieve project goals. When I'm not coding, I enjoy spending my time travelling. I'm excited to continue my journey as a software developer and help organizations achieve their technological aspirations.
                         </p>
                     </div>
                 </div>
