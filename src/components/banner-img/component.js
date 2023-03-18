@@ -5,7 +5,7 @@ function BannerComponent() {
     return (
         <section id='banner'>
             <div className='banner-container'>
-                <img id='banner' src={hero} />
+                <img id='banner' src={hero} alt='banner-img' />
             </div>
         </section>
     );
