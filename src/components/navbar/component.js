@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './style.css';
 
-const headerOpenAnimation = [{ height: '21px' }, { height: '137px' }];
+const headerOpenAnimation = [{ height: '21px' }, { height: '108px' }];
 const navLinkAnimation = [{ opacity: 0 }, { opacity: 0 }, { opacity: 1 }];
 const fadeOutAnimation = [{ opacity: 0 }, { opacity: 1 }];
-const headerCloseAnimation = [{ height: '137px' }, { height: '21px' }];
+const headerCloseAnimation = [{ height: '108px' }, { height: '21px' }];
 const animationTiming = { duration: 1000, iterations: 1 };
 
 function Navbar() {
