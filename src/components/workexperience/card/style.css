@@ -4,12 +4,11 @@
 
 .company-link {
     text-decoration: none;
-    color: var(--color-30-primary);
     transition: 1s all;
 }
 
 .company-link:hover {
-    color: var(--color-30-secondary);
+    color: var(--color-10-secondary);
 }
 
 .work-experience-card {

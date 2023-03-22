@@ -27,12 +27,11 @@
 
 .project-link {
     text-decoration: none;
-    color: var(--color-30-primary);
     transition: 1s all;
 }
 
 .project-link:hover {
-    color: var(--color-30-secondary);
+    color: var(--color-10-secondary);
 }
 
 .project-description {
@@ -51,13 +50,12 @@
 
 .project-links a {
     text-decoration: none;
-    color: var(--color-30-primary);
     transition: 1s all;
 }
 
 .project-links a:hover {
     text-decoration: none;
-    color: var(--color-30-secondary);
+    color: var(--color-10-secondary);
 
 }
 
