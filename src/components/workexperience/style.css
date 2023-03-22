@@ -1,7 +1,6 @@
 #work-experience-card-container {
     display: flex;
     flex-direction: row;
-    gap: 5px;
     justify-content: space-evenly;
 }
 

@@ -61,9 +61,27 @@
 
 }
 
+@media only screen and (max-width:790px) {
+    .projects-card {
+        max-width: 30vw;
+    }
+}
+
 @media only screen and (max-width:610px) {
     .projects-card {
-        max-width: 50vw;
+        max-width: 35vw;
+    }
+}
+
+@media only screen and (max-width:596px) {
+    .projects-card {
+        max-width: 40vw;
+    }
+}
+
+@media only screen and (max-width:396px) {
+    .projects-card {
+        max-width: 60vw;
     }
 }
 
