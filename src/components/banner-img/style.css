@@ -1,6 +1,7 @@
 #banner {
     width: 100vw;
     height: auto;
+    opacity: 0.8;
 }
 
 .banner-container {
