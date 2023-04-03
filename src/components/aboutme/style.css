@@ -105,7 +105,7 @@ ion-icon:before {
 }
 
 .about-me-intro b {
-    color: var(--color-30-primary);
+    color: var(--color-10-secondary);
 }
 
 @media only screen and (max-width:848px) {

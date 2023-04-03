@@ -7,6 +7,6 @@
 .heading-component h1 {
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
-    color: var(--color-30-primary);
+    color: var(--color-10-primary);
     font-size: xx-large;
 }

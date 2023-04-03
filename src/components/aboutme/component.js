@@ -76,7 +76,12 @@ function AboutMeComponent() {
                     <div className='about-me-section-2'>
                         <h3>About me</h3>
                         <p className='about-me-intro'>
-                            Hello, I'm Joe Philip, a skilled software developer with a passion for creating innovative solutions to complex problems. With 2+ years of experience in <b>Python</b>, I am specialized in <b>web development</b> and have successfully completed fair amount of projects as part of working with a team. As a highly motivated and detail-oriented developer, I thrive in challenging environments and love to collaborate with cross-functional teams to achieve project goals. When I'm not coding, I enjoy spending my time travelling. I'm excited to continue my journey as a software developer and help organizations achieve their technological aspirations.
+                            Hi, I'm Joe Philip and I'm a <b>Python developer</b> with more than 2 years of experience. I'm passionate about writing clean, efficient, and maintainable code that solves real-world problems.
+                            My journey as a developer started when I was 20 years old and was fascinated by how technology can solve complex problems. I learned programming on my own and started working on small projects of my own, which eventually led me to pursue a career as a developer.
+                            Over the years, I've worked on a wide range of projects built using Python's most popular web framework <b>Django</b>. I'm comfortable with back-end development and have experience working with databases like MySQL and PostgreSQL.
+                            One of my favorite things about Python is its simplicity and readability. I strive to write code that is easy to understand, maintain, and scale.
+                            In my free time, I love to contribute to open-source projects and stay up-to-date with the latest developments in the Python community.
+                            If you're looking for a Python developer who is passionate about writing clean, efficient, and maintainable code, then I'd love to work with you. Feel free to get in touch with me to discuss your project requirements.
                         </p>
                     </div>
                 </div>
