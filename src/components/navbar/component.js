@@ -17,7 +17,7 @@ function Navbar() {
             <nav id='navbar'>
                 <ul id='navlist'>
                     <li className='nav-item'>
-                        <a href='/' className='nav-link'>Joe Philip</a>
+                        <a href={process.env.REACT_APP_HOME_URL ? process.env.REACT_APP_HOME_URL : '/'} className='nav-link'>Joe Philip</a>
                         {
                             screenWidth <= 412 ?
                                 menuState === 'closed' ?
