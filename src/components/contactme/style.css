@@ -42,6 +42,22 @@
     gap: 10px;
 }
 
+#submit-button {
+    width: 100%;
+    background-color: var(--color-30-primary);
+    color: var(--color-10-secondary);
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    border: none;
+    transition: 0.5s all;
+}
+
+#submit-button:hover{
+    background-color: var(--color-30-secondary);
+    cursor: pointer;
+}
+
 @media only screen and (max-width:435px) {
     .form-row {
         flex-direction: column;

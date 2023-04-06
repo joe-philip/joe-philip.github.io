@@ -20,6 +20,9 @@ function ContactMe() {
                 <div className="form-row">
                     <input type="textarea" placeholder="Message" />
                 </div>
+                <div className="form-row">
+                    <button id="submit-button">Submit</button>
+                </div>
             </form>
         </section>
     );
