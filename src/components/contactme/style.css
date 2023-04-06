@@ -53,7 +53,7 @@
     transition: 0.5s all;
 }
 
-#submit-button:hover{
+#submit-button:hover {
     background-color: var(--color-30-secondary);
     cursor: pointer;
 }
