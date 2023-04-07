@@ -19,6 +19,7 @@ root.render(
     <AboutMeComponent />
     <Experience />
     <ProjectsComponent />
+    <ContactMe />
     <Footer />
   </React.StrictMode>
 );

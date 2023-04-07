@@ -13,7 +13,7 @@ function ProjectsComponent() {
                         </a>
                     </h3>
                     <p className='project-description'>
-                        Random password generator is a basic web app developed for generating strong random passwords. The app is build using front-end technology ReactJS and backedn technology Flask.
+                        Random password generator is a basic web app developed for generating strong random passwords. The app is build using front-end technology ReactJS and backend technology Django.
                     </p>
                     <ul className='project-links'>
                         <li>
@@ -23,7 +23,7 @@ function ProjectsComponent() {
                             <a href='https://github.com/joe-philip/random_password_generator_react'>Frontend Repository</a>
                         </li>
                         <li>
-                            <a href='https://github.com/joe-philip/random_password_generator'>Backend Repository</a>
+                            <a href='https://github.com/joe-philip/random_password_generator_django'>Backend Repository</a>
                         </li>
                     </ul>
                 </div>

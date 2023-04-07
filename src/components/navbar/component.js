@@ -31,6 +31,7 @@ function Navbar() {
                         <a href='#work-experience' className='nav-link'>Work Experience</a>
                     </li>
                     <li className='nav-item'><a href='#projects' className='nav-link'>Projects</a></li>
+                    <li className='nav-item'><a href='#contact-me' className='nav-link'>Contact me</a></li>
                 </ul>
             </nav>
         </header>
