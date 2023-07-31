@@ -10,6 +10,29 @@ function ProjectsComponent() {
                     <div className='projects-card'>
                         <h3 className='project-title'>
                             <a className='project-link' target='_blank' rel='noreferrer' href='https://joe-philip.github.io/random_password_generator_react/'>
+                                Python django code snippets for VSCode
+                            </a>
+                        </h3>
+                        <p className='project-description'>
+                            Python django rest framework code snippets for VSCode is a VSCode extension that provides a collection of useful code snippets for Python programming in Django rest framework. The extension includes snippets for commonly used code segments, such as loops, functions, file handling, regular expressions, and more. With this extension, you can save valuable time and effort by quickly inserting these code segments into your projects, without the need to manually type them out.
+                        </p>
+                        <ul className='project-links'>
+                            <li>
+                                <a target='_blank' href='https://joe-philip.github.io/python_django_rest_framework_code_snippets/'>View Documentation page</a>
+                            </li>
+                            <li>
+                                <a target='_blank' href='https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview'>View extension in VS Code marketplace</a>
+                            </li>
+                            <li>
+                                <a target='_blank' href='https://gitlab.com/joe-philip/python_code_snippets'>View Repository</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='projects-card-container'>
+                    <div className='projects-card'>
+                        <h3 className='project-title'>
+                            <a className='project-link' target='_blank' rel='noreferrer' href='https://joe-philip.github.io/random_password_generator_react/'>
                                 Random password generator
                             </a>
                         </h3>
@@ -33,21 +56,14 @@ function ProjectsComponent() {
                     <div className='projects-card'>
                         <h3 className='project-title'>
                             <a className='project-link' target='_blank' rel='noreferrer' href='https://joe-philip.github.io/random_password_generator_react/'>
-                                Python django code snippets for VSCode
+                                Basic Calculator using Python
                             </a>
                         </h3>
                         <p className='project-description'>
-                        Python django rest framework code snippets for VSCode is a VSCode extension that provides a collection of useful code snippets for Python programming in Django rest framework. The extension includes snippets for commonly used code segments, such as loops, functions, file handling, regular expressions, and more. With this extension, you can save valuable time and effort by quickly inserting these code segments into your projects, without the need to manually type them out.
-                        </p>
+                        GUI Calculator is basic calculator project done with Tkinter, Python’s GUI framework</p>
                         <ul className='project-links'>
                             <li>
-                                <a target='_blank' href='https://joe-philip.github.io/python_django_rest_framework_code_snippets/'>View Documentation page</a>
-                            </li>
-                            <li>
-                                <a target='_blank' href='https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview'>View extension in VS Code marketplace</a>
-                            </li>
-                            <li>
-                                <a target='_blank' href='https://gitlab.com/joe-philip/python_code_snippets'>View Repository</a>
+                                <a target='_blank' href='https://github.com/joe-philip/calcPythonTkinter'>View Repository</a>
                             </li>
                         </ul>
                     </div>
