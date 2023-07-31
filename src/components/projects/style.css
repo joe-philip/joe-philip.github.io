@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
+.projects-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .projects-card-container {
     display: flex;
     flex-direction: row;
@@ -15,6 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    justify-content: space-evenly;
 }
 
 .projects-card * {
@@ -74,6 +80,13 @@
 @media only screen and (max-width:596px) {
     .projects-card {
         max-width: 40vw;
+    }
+}
+
+@media only screen and (max-width:546px) {
+    .projects-container {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
