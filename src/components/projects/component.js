@@ -18,13 +18,13 @@ function ProjectsComponent() {
                         </p>
                         <ul className='project-links'>
                             <li>
-                                <a href='https://joe-philip.github.io/random_password_generator_react/'>View Deployment</a>
+                                <a target='_blank' href='https://joe-philip.github.io/random_password_generator_react/'>View Deployment</a>
                             </li>
                             <li>
-                                <a href='https://github.com/joe-philip/random_password_generator_react'>Frontend Repository</a>
+                                <a target='_blank' href='https://github.com/joe-philip/random_password_generator_react'>Frontend Repository</a>
                             </li>
                             <li>
-                                <a href='https://github.com/joe-philip/random_password_generator_django'>Backend Repository</a>
+                                <a target='_blank' href='https://github.com/joe-philip/random_password_generator_django'>Backend Repository</a>
                             </li>
                         </ul>
                     </div>
@@ -41,13 +41,13 @@ function ProjectsComponent() {
                         </p>
                         <ul className='project-links'>
                             <li>
-                                <a href='https://joe-philip.github.io/python_django_rest_framework_code_snippets/'>View Documentation page</a>
+                                <a target='_blank' href='https://joe-philip.github.io/python_django_rest_framework_code_snippets/'>View Documentation page</a>
                             </li>
                             <li>
-                                <a href='https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview'>View extension in VS Code marketplace</a>
+                                <a target='_blank' href='https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview'>View extension in VS Code marketplace</a>
                             </li>
                             <li>
-                                <a href='https://gitlab.com/joe-philip/python_code_snippets'>View Repository</a>
+                                <a target='_blank' href='https://gitlab.com/joe-philip/python_code_snippets'>View Repository</a>
                             </li>
                         </ul>
                     </div>
