@@ -1,0 +1,70 @@
+[
+    {
+        "ordering": 1,
+        "title": "Basic markdown snippets extension for vscode",
+        "titleLink": "https://marketplace.visualstudio.com/items?itemName=JoePhilip.markdown-code-snippets",
+        "description": "This extension is designed to enhance your Markdown editing experience by providing a collection of useful and time-saving code snippets that you can easily insert into your Markdown documents. Whether you're writing technical documentation, blog posts, or just taking notes, these snippets will help you format your content quickly and efficiently",
+        "links": [
+            {
+                "link": "https://github.com/joe-philip/markdown-snippets",
+                "title": "View Repository"
+            },
+            {
+                "link": "https://marketplace.visualstudio.com/items?itemName=JoePhilip.markdown-code-snippets",
+                "title": "View Extension in vscode marketplace"
+            }
+        ]
+    },
+    {
+        "ordering": 2,
+        "title": "Python django code snippets for VSCode",
+        "titleLink": "https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview",
+        "description": "Python django rest framework code snippets for VSCode is a VSCode extension that provides a collection of useful code snippets for Python programming in Django rest framework. The extension includes snippets for commonly used code segments, such as loops, functions, file handling, regular expressions, and more. With this extension, you can save valuable time and effort by quickly inserting these code segments into your projects, without the need to manually type them out.",
+        "links": [
+            {
+                "link": "https://joe-philip.github.io/python_django_rest_framework_code_snippets/",
+                "title": "View Documentation page"
+            },
+            {
+                "link": "https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview",
+                "title": "View extension in VS Code marketplace"
+            },
+            {
+                "link": "https://gitlab.com/joe-philip/python_code_snippets",
+                "title": "View Repository"
+            }
+        ]
+    },
+    {
+        "ordering": 3,
+        "title": "Random password generator",
+        "titleLink": "https://joe-philip.github.io/random_password_generator_react/",
+        "description": "Random password generator is a basic web app developed for generating strong random passwords. The app is build using front-end technology ReactJS and backend technology Django.",
+        "links": [
+            {
+                "link": "https://joe-philip.github.io/random_password_generator_react/",
+                "title": "View Deployment"
+            },
+            {
+                "link": "https://github.com/joe-philip/random_password_generator_react",
+                "title": "Frontend Repository"
+            },
+            {
+                "link": "https://github.com/joe-philip/random_password_generator_django",
+                "title": "Backend Repository"
+            }
+        ]
+    },
+    {
+        "ordering": 4,
+        "title": "Basic Calculator using Python",
+        "titleLink": "https://joe-philip.github.io/random_password_generator_react/",
+        "description": "GUI Calculator is basic calculator project done with Tkinter, Python’s GUI framework",
+        "links": [
+            {
+                "link": "https://github.com/joe-philip/calcPythonTkinter",
+                "title": "View Repository"
+            }
+        ]
+    }
+]
