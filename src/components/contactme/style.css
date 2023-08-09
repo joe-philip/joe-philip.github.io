@@ -40,6 +40,7 @@
     width: 100%;
     color: var(--color-10-secondary);
     transition: 0.5s all;
+    padding: 5px;
 }
 
 #contact-me-form input[type="text"]:focus,
