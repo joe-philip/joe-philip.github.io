@@ -46,6 +46,12 @@
     grid-column-end: 3;
 }
 
+
+.skills,
+.socials {
+    width: 100%;
+}
+
 .skills-title {
     text-align: center;
     margin: 10px 0;
@@ -55,11 +61,8 @@
     list-style: none;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
     gap: 10px;
-}
-
-.socials {
-    width: 100%;
 }
 
 .socials-title {
