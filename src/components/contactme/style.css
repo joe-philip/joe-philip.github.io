@@ -37,7 +37,6 @@
     border: 1px solid var(--color-30-secondary);
     height: 25px;
     border-radius: 5px;
-    width: 100%;
     color: var(--color-10-secondary);
     transition: 0.5s all;
     padding: 5px;
@@ -83,7 +82,7 @@
 }
 
 @media only screen and (max-width:611px) {
-    .contact-me-form {
+    #contact-me-form {
         min-width: 80vw;
     }
 }
