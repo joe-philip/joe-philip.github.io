@@ -66,3 +66,10 @@
     color: var(--color-10-secondary);
 
 }
+
+@media only screen and (max-width: 611px) {
+    .projects-card-container {
+        max-width: 80vw;
+        gap: 10px;
+    }
+}

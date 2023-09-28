@@ -70,30 +70,10 @@
     margin: 5px 0;
 }
 
-@media only screen and (max-width:696px) {
-    .work-experience-card * {
-        font-size: small;
-    }
-}
+/* @media only screen and (max-width:396px) {
 
-@media only screen and (max-width:596px) {
-    .work-experience-card * {
-        font-size: smaller;
-    }
-}
-
-@media only screen and (max-width:496px) {
-    .work-experience-card * {
-        font-size: x-small;
-    }
-}
-
-@media only screen and (max-width:396px) {
-    .work-experience-card * {
-        font-size: xx-small;
-    }
 
     .other-data {
         gap: 5px;
     }
-}
+} */
