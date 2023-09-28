@@ -1,5 +1,5 @@
 import Heading from '../heading/component';
-import data from './data.json'
+import data from './data.json';
 import ProjectCardComponent from './project-card-component';
 import './style.css';
 
