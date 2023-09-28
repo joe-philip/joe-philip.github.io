@@ -82,6 +82,12 @@
     }
 }
 
+@media only screen and (max-width:611px) {
+    .contact-me-form {
+        min-width: 80vw;
+    }
+}
+
 @media only screen and (max-width:435px) {
     .form-row {
         flex-direction: column;
