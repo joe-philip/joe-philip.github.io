@@ -39,7 +39,7 @@
     border-radius: 5px;
     color: var(--color-10-secondary);
     transition: 0.5s all;
-    padding: 5px;
+    /* padding: 5px; */
     width: 100%;
 }
 
@@ -50,10 +50,15 @@
     color: var(--color-10-primary);
 }
 
+.input-element{
+    padding: 0px 10px;
+    width: 100%;
+}
+
 .form-row {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 #submit-button {
@@ -70,6 +75,14 @@
 #submit-button:hover {
     background-color: var(--color-30-secondary);
     cursor: pointer;
+}
+
+.error-list{
+    font-size: small;
+    list-style: none;
+}
+.error-list *{
+    color: rgba(255, 0, 0, 0.598);
 }
 
 @keyframes fadeIn {

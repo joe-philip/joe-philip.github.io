@@ -35,9 +35,29 @@ function ContactMe() {
                 form.appendChild(responseElement)
             }
             else {
-                responseElement.className = 'response fail temp'
-                responseElement.innerHTML = 'Message sending failed please try again later!'
-                form.appendChild(responseElement)
+                response.json().then(
+                    value => {
+                        for (const key in value) {
+                            var errorList = document.createElement('ul')
+                            errorList.classList = 'temp error-list'
+                            var element = document.getElementsByName(key)[0];
+                            value[key].map(
+                                message => {
+                                    var li = document.createElement('li');
+                                    li.innerHTML = message;
+                                    errorList.appendChild(li);
+                                    return li
+                                }
+                            )
+                            element.after(errorList);
+                        }
+                    },
+                    reject => {
+                        responseElement.className = 'response fail temp'
+                        responseElement.innerHTML = 'Message sending failed please try again later!'
+                        form.appendChild(responseElement)
+                    }
+                )
             }
         })
     }
@@ -47,18 +67,30 @@ function ContactMe() {
             <form id="contact-me-form">
                 {loading ? <div className="loader">Loading...</div> : ''}
                 <div className="form-row">
-                    <input onInput={handleChange} type="text" placeholder="First name" name="first_name" />
-                    <input onInput={handleChange} type="text" placeholder="Last name" name="last_name" />
+                    <div className="input-element">
+                        <input onInput={handleChange} type="text" placeholder="First name" name="first_name" />
+                    </div>
+                    <div className="input-element">
+                        <input onInput={handleChange} type="text" placeholder="Last name" name="last_name" />
+                    </div>
                 </div>
                 <div className="form-row">
-                    <input onInput={handleChange} type="email" placeholder="E-mail" name="email" />
-                    <input onInput={handleChange} type="text" placeholder="Phone" name="phone_number" />
+                    <div className="input-element">
+                        <input onInput={handleChange} type="email" placeholder="E-mail" name="email" />
+                    </div>
+                    <div className="input-element">
+                        <input onInput={handleChange} type="text" placeholder="Phone" name="phone_number" />
+                    </div>
                 </div>
                 <div className="form-row">
-                    <input onInput={handleChange} type="text" placeholder="Subject" name="subject" />
+                    <div className="input-element">
+                        <input onInput={handleChange} type="text" placeholder="Subject" name="subject" />
+                    </div>
                 </div>
                 <div className="form-row">
-                    <input onInput={handleChange} type="textarea" placeholder="Message" name="message" required />
+                    <div className="input-element">
+                        <input onInput={handleChange} type="textarea" placeholder="Message" name="message" required />
+                    </div>
                 </div>
                 <div className="form-row">
                     <button id="submit-button" onClick={submitForm}>Submit</button>
