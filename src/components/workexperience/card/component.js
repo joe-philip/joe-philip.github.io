@@ -1,14 +1,26 @@
 import './style.css';
-
+import { useEffect, useState } from 'react';
 function generateElements(data) {
     var response = []
     for (const key in data) {
         response.push(<><div className='card-key'>{key}</div>:<div className='card-value'>{data[key]}</div></>)
     }
-    return (<div className='other-data'>{response.map((i, index) => <>{i}</>)}</div>);
+    return (
+        <div className='other-data'>
+            {
+                response.map(
+                    (i, index) => <>{i}</>
+                )
+            }
+        </div>
+    );
 }
 
 function WorkExperienceCardComponent(props) {
+    const [imagePath, setImagePath] = useState('');
+    useEffect(() => {
+        setImagePath(props.logo)
+    }, []);
     return (
         <div className='work-experience-card'>
             <h3 className='company-title'>
@@ -20,7 +32,7 @@ function WorkExperienceCardComponent(props) {
                         props.companyTitle
                 }
             </h3>
-            {props.logo && <img src={props.logo} alt='company-logo' className='company-logo' />}
+            {props.logo && <img src={imagePath} alt='company-logo' className='company-logo' />}
             {generateElements(props.otherData)}
             {
                 props.rolesAndResponsibilities && <>
