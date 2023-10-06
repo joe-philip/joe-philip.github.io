@@ -5,6 +5,7 @@ import skillsData from './skills-component/data.json';
 import socialsData from './socials-component/data.json';
 import SocialsList from './socials-component/socials';
 import './style.css';
+
 function AboutMeComponent() {
     return (
         <section id='about-me'>
