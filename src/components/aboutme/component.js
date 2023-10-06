@@ -1,7 +1,10 @@
-import './style.css'
-import image from './image.jpg'
 import Heading from '../heading/component';
-
+import image from './image.jpg';
+import SkillsList from './skills-component/component';
+import skillsData from './skills-component/data.json';
+import socialsData from './socials-component/data.json';
+import SocialsList from './socials-component/socials';
+import './style.css';
 function AboutMeComponent() {
     return (
         <section id='about-me'>
@@ -20,57 +23,11 @@ function AboutMeComponent() {
                         </div>
                         <div className='skills'>
                             <h3 className='skills-title'>Skills</h3>
-                            <ul className='skills-list'>
-                                <li>Python</li>
-                                <li>Django</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>ReactJS</li>
-                                <li>GIT</li>
-                                <li>MySQL</li>
-                                <li>PostgreSQL</li>
-                            </ul>
+                            <SkillsList data={skillsData} />
                         </div>
                         <div className='socials'>
                             <h3 className='socials-title'>Socials</h3>
-                            <ul className='socials-list'>
-                                <li>
-                                    <a href='https://www.instagram.com/riderbones/' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-instagram'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://www.facebook.com/unpredictableupshifts/' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-facebook'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://github.com/joe-philip' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-github'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://gitlab.com/joe-philip' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-gitlab'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://www.linkedin.com/in/joe-philip/' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-linkedin'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://twitter.com/joephilip95' target='_blank' rel='noreferrer'>
-                                        <ion-icon name='logo-twitter'></ion-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='https://wa.me/919633689769' target='_blank' rel='noreferrer'>
-                                        <ion-icon name="logo-whatsapp"></ion-icon>
-                                    </a>
-                                </li>
-                            </ul>
+                            <SocialsList data={socialsData} />
                         </div>
                     </div>
                     <div className='about-me-section-2'>

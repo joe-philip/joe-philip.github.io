@@ -38,15 +38,15 @@ function ContactMe() {
                 response.json().then(
                     value => {
                         for (const key in value) {
-                            var errorList = document.createElement('ul')
-                            errorList.classList = 'temp error-list'
+                            var errorList = document.createElement('ul');
+                            errorList.classList = 'temp error-list';
                             var element = document.getElementsByName(key)[0];
-                            value[key].map(
+                            value[key].map( // eslint-disable-next-line
                                 message => {
                                     var li = document.createElement('li');
                                     li.innerHTML = message;
                                     errorList.appendChild(li);
-                                    return li
+                                    return li;
                                 }
                             )
                             element.after(errorList);
