@@ -18,7 +18,9 @@ function WorkExperienceCardComponent(props) {
                 {
                     otherDataKeys.map(
                         key => <>
-                            <div className='card-key'>{key}:&nbsp;</div><div className='card-value'>{props.otherData[key]}</div>
+                            <div className='card-key'>{key}</div>
+                            :&nbsp;
+                            <div className='card-value'>{props.otherData[key]}</div>
                         </>
                     )
                 }
