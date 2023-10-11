@@ -32,7 +32,15 @@ function ContactMe() {
             if (response.status === 200) {
                 responseElement.className = 'response success temp'
                 responseElement.innerHTML = 'Message sent!'
-                form.appendChild(responseElement)
+                form.appendChild(responseElement);
+                setFormData({
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    phone_number: '',
+                    subject: '',
+                    message: ''
+                });
             }
             else {
                 response.json().then(
@@ -68,28 +76,28 @@ function ContactMe() {
                 {loading ? <div className="loader">Loading...</div> : ''}
                 <div className="form-row">
                     <div className="input-element">
-                        <input onInput={handleChange} type="text" placeholder="First name" name="first_name" />
+                        <input onInput={handleChange} value={formData.first_name} type="text" placeholder="First name" name="first_name" />
                     </div>
                     <div className="input-element">
-                        <input onInput={handleChange} type="text" placeholder="Last name" name="last_name" />
-                    </div>
-                </div>
-                <div className="form-row">
-                    <div className="input-element">
-                        <input onInput={handleChange} type="email" placeholder="E-mail" name="email" />
-                    </div>
-                    <div className="input-element">
-                        <input onInput={handleChange} type="text" placeholder="Phone" name="phone_number" />
+                        <input onInput={handleChange} value={formData.last_name} type="text" placeholder="Last name" name="last_name" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="input-element">
-                        <input onInput={handleChange} type="text" placeholder="Subject" name="subject" />
+                        <input onInput={handleChange} value={formData.email} type="email" placeholder="E-mail" name="email" />
+                    </div>
+                    <div className="input-element">
+                        <input onInput={handleChange} value={formData.phone_number} type="text" placeholder="Phone" name="phone_number" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="input-element">
-                        <input onInput={handleChange} type="textarea" placeholder="Message" name="message" required />
+                        <input onInput={handleChange} value={formData.subject} type="text" placeholder="Subject" name="subject" />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="input-element">
+                        <input onInput={handleChange} value={formData.message} type="textarea" placeholder="Message" name="message" required />
                     </div>
                 </div>
                 <div className="form-row">
