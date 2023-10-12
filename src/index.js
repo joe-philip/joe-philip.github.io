@@ -8,6 +8,7 @@ import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
+import bannerData from './components/banner-img/data.json'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Navbar />
-    <BannerComponent />
+    <BannerComponent data={bannerData.img} />
     <AboutMeComponent />
     <Experience />
     <ProjectsComponent />

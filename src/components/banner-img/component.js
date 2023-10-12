@@ -1,11 +1,10 @@
-import hero from './hero.jpg'
-import './style.css'
+import './style.css';
 
-function BannerComponent() {
+function BannerComponent(props) {
     return (
         <section id='banner'>
             <div className='banner-container'>
-                <img id='banner' src={hero} alt='banner-img' />
+                <img id='banner' src={props.data} alt='banner-img' />
             </div>
         </section>
     );
