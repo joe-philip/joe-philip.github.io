@@ -1,5 +1,6 @@
 import Heading from '../heading/component';
-import contactData from './contact.json';
+import ContactComponent from './contact-component/component';
+import contactData from './contact-component/contact.json';
 import image from './image.jpg';
 import SkillsList from './skills-component/component';
 import skillsData from './skills-component/data.json';
@@ -8,8 +9,6 @@ import SocialsList from './socials-component/socials';
 import './style.css';
 
 function AboutMeComponent() {
-    const contactKeys = Object.keys(contactData);
-    var capitalize = value => value.charAt(0).toUpperCase() + value.slice(1);
     return (
         <section id='about-me'>
             <Heading text="About me" />
@@ -19,16 +18,7 @@ function AboutMeComponent() {
                         <div className='about-me-img-container'>
                             <img src={image} alt='img' className='about-me-img' />
                         </div>
-                        <div className='about-me-info'>
-                            {
-                                contactKeys.map(
-                                    key => <>
-                                        <span className='key'>{capitalize(key)}:</span>
-                                        <span className='val'>{contactData[key]}</span>
-                                    </>
-                                )
-                            }
-                        </div>
+                        <ContactComponent data={contactData} />
                         <div className='skills'>
                             <h3 className='skills-title'>Skills</h3>
                             <SkillsList data={skillsData} />

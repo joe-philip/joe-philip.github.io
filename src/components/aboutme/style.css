@@ -32,21 +32,6 @@
     opacity: 0.9;
 }
 
-.about-me-info {
-    display: grid;
-}
-
-.key {
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-
-.val {
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-
 .skills,
 .socials {
     width: 100%;
