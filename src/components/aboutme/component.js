@@ -1,6 +1,6 @@
 import Heading from '../heading/component';
+import contactData from './contact.json';
 import image from './image.jpg';
-import contactData from './contact.json'
 import SkillsList from './skills-component/component';
 import skillsData from './skills-component/data.json';
 import socialsData from './socials-component/data.json';
