@@ -1,5 +1,6 @@
 import Heading from '../heading/component';
 import image from './image.jpg';
+import contactData from './contact.json'
 import SkillsList from './skills-component/component';
 import skillsData from './skills-component/data.json';
 import socialsData from './socials-component/data.json';
@@ -7,6 +8,8 @@ import SocialsList from './socials-component/socials';
 import './style.css';
 
 function AboutMeComponent() {
+    const contactKeys = Object.keys(contactData);
+    var capitalize = value => value.charAt(0).toUpperCase() + value.slice(1);
     return (
         <section id='about-me'>
             <Heading text="About me" />
@@ -17,10 +20,14 @@ function AboutMeComponent() {
                             <img src={image} alt='img' className='about-me-img' />
                         </div>
                         <div className='about-me-info'>
-                            <span className='key'>Name:</span><span className='val'>Joe Philip</span>
-                            <span className='key'>Role:</span><span className='val'>Python Developer</span>
-                            <span className='key'>Email:</span><span className='val'>joe.philip@hotmail.co.in</span>
-                            <span className='key'>Phone:</span><span className='val'>+91 9633 689 769</span>
+                            {
+                                contactKeys.map(
+                                    key => <>
+                                        <span className='key'>{capitalize(key)}:</span>
+                                        <span className='val'>{contactData[key]}</span>
+                                    </>
+                                )
+                            }
                         </div>
                         <div className='skills'>
                             <h3 className='skills-title'>Skills</h3>
