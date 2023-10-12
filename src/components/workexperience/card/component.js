@@ -29,7 +29,11 @@ function WorkExperienceCardComponent(props) {
                 props.rolesAndResponsibilities && <>
                     Roles and Responsibilities:
                     <ul className='roles-and-responsibilites'>
-                        {props.rolesAndResponsibilities.map((i, index) => <li key={index}>{i}</li>)}
+                        {
+                            props.rolesAndResponsibilities.map(
+                                (i, index) => <li key={index}>{i}</li>
+                            )
+                        }
                     </ul>
                 </>
             }
