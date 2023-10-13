@@ -1,27 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AboutMeComponent from './components/aboutme/component';
-import BannerComponent from './components/banner-img/component';
-import ContactMe from './components/contactme/component';
-import Footer from './components/footer/component';
-import Navbar from './components/navbar/component';
-import ProjectsComponent from './components/projects/component';
-import Experience from './components/workexperience/component';
+import App from './app';
 import './index.css';
-import bannerData from './components/banner-img/data.json'
 import reportWebVitals from './reportWebVitals';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <BannerComponent data={bannerData.img} />
-    <AboutMeComponent />
-    <Experience />
-    <ProjectsComponent />
-    <ContactMe />
-    <Footer />
+    <App />
   </React.StrictMode>
 );
 
