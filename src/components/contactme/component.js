@@ -21,7 +21,7 @@ function ContactMe() {
         [...document.getElementsByClassName('temp')].map(i => i.remove())
         var form = document.getElementById('contact-me-form');
         var responseElement = document.createElement('div');
-        fetch(process.env.REACT_APP_SEND_MESSAGE_API, {
+        fetch(process.env.REACT_APP_API_BASE_URL + 'contact_us', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -5,7 +5,7 @@ function SocialsList(props) {
         <ul className='socials-list'>
             {
                 props.data.map(
-                    (social, key) => <li key={key}>
+                    social => <li key={social.id}>
                         <a href={social.link}>
                             <ion-icon name={social.icon}></ion-icon>
                         </a>

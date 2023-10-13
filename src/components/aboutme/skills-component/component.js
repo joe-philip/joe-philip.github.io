@@ -5,7 +5,7 @@ function SkillsList(props) {
         <ul className='skills-list'>
             {
                 props.data.map(
-                    (skill, key) => <li key={key}>{skill}</li>
+                    skill => <li key={skill.id}>{skill.name}</li>
                 )
             }
         </ul>

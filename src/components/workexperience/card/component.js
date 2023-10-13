@@ -1,37 +1,36 @@
 import './style.css';
 
 function WorkExperienceCardComponent(props) {
-    const otherDataKeys = Object.keys(props.otherData);
     return (
         <div className='work-experience-card'>
             <h3 className='company-title'>
                 {
-                    props.link ?
-                        <a className='company-link' target='_blank' rel='noreferrer' href={props.link}>
-                            {props.companyTitle}
+                    props.experienceData.company_url ?
+                        <a className='company-link' target='_blank' rel='noreferrer' href={props.experienceData.company_url}>
+                            {props.experienceData.title}
                         </a> :
-                        props.companyTitle
+                        props.experienceData.title
                 }
             </h3>
-            {props.logo && <img src={props.logo} alt='company-logo' className='company-logo' />}
+            {props.experienceData.logo && <img src={props.experienceData.logo} alt='company-logo' className='company-logo' />}
             <div className='other-data'>
                 {
-                    otherDataKeys.map(
-                        key => <>
-                            <div className='card-key'>{key}</div>
+                    props.experienceData.work_experience_additional_data.map(
+                        obj => <>
+                            <div className='card-key'>{obj.key}</div>
                             :&nbsp;
-                            <div className='card-value'>{props.otherData[key]}</div>
+                            <div className='card-value'>{obj.value}</div>
                         </>
                     )
                 }
             </div>
             {
-                props.rolesAndResponsibilities && <>
+                props.experienceData.work_experience_roles_and_responsibilities && <>
                     Roles and Responsibilities:
                     <ul className='roles-and-responsibilites'>
                         {
-                            props.rolesAndResponsibilities.map(
-                                (i, index) => <li key={index}>{i}</li>
+                            props.experienceData.work_experience_roles_and_responsibilities.map(
+                                i => <li key={i.id}>{i.label}</li>
                             )
                         }
                     </ul>

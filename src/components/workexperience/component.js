@@ -1,14 +1,13 @@
 import Heading from '../heading/component';
 import WorkExperienceCardComponent from './card/component';
-import data from './data.json'
 import './style.css';
 
-function Experience() {
+function Experience(props) {
     return (
         <section id="work-experience">
             <Heading text="Work experience" />
             <div id="work-experience-card-container">
-                {data.map((i, index) => <WorkExperienceCardComponent {...i} key={index} />)}
+                {props.experience && props.experience.map(i => <WorkExperienceCardComponent experienceData={i} key={i.id} />)}
             </div>
         </section>
     );
