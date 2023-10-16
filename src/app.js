@@ -37,7 +37,7 @@ function App() {
                 socials={propsData.social_media}
             />
             <Experience experience={propsData.work_experience} />
-            <ProjectsComponent />
+            <ProjectsComponent projects={propsData.projects} />
             <ContactMe />
             <Footer />
         </div>
