@@ -8,7 +8,7 @@
 }
 
 .company-link:hover {
-    color: var(--color-10-secondary);
+    color: var(--color-text-secondary);
 }
 
 .work-experience-card {

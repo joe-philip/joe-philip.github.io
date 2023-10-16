@@ -9,12 +9,12 @@
 
 .socials-list a {
     text-decoration: none;
-    color: var(--color-30-primary);
+    color: var(--color-text-primary);
     transition: 0.5s all;
 }
 
 .socials-list a:hover {
-    color: var(--color-30-secondary);
+    color: var(--color-text-secondary);
 }
 
 ion-icon:before {
