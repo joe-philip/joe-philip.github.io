@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './app.css';
 import AboutMeComponent from './components/aboutme/component';
 import BannerComponent from './components/banner-img/component';
 import ContactMe from './components/contactme/component';
@@ -7,14 +8,18 @@ import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
+import loaderImage from './loader.webp'
 
 function App() {
-    const [propsData, setPropsData] = useState({})
+    const [propsData, setPropsData] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
     const apiURL = `${process.env.REACT_APP_API_URL}/profile`;
     useEffect(
         () => {
+            setIsLoading(true);
             fetch(apiURL).then(
                 response => {
+                    setIsLoading(false);
                     if (response.status === 200) {
                         response.json().then(
                             response => {
@@ -27,20 +32,28 @@ function App() {
         }, [apiURL]
     );
     return (
-        <div className="App">
-            <Navbar />
-            <BannerComponent data={propsData.banner_img} />
-            <AboutMeComponent
-                info={propsData.info}
-                image={propsData.profile_img}
-                skills={propsData.skills}
-                socials={propsData.social_media}
-            />
-            <Experience experience={propsData.work_experience} />
-            <ProjectsComponent projects={propsData.projects} />
-            <ContactMe />
-            <Footer />
-        </div>
+        <>
+            {
+                isLoading ? <div id='loader'>
+                    <img className='loader-img' src={loaderImage} />
+                    Loading...
+                </div> :
+                    <div className="App">
+                        <Navbar />
+                        <BannerComponent data={propsData.banner_img} />
+                        <AboutMeComponent
+                            info={propsData.info}
+                            image={propsData.profile_img}
+                            skills={propsData.skills}
+                            socials={propsData.social_media}
+                        />
+                        <Experience experience={propsData.work_experience} />
+                        <ProjectsComponent projects={propsData.projects} />
+                        <ContactMe />
+                        <Footer />
+                    </div>
+            }
+        </>
     )
 }
 
