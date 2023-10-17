@@ -33,27 +33,25 @@ function App() {
     );
     return (
         <>
-            {
-                isLoading ? <div id='loader'>
-                    <img className='loader-img' src={loaderImage} alt='loading' />
-                    Loading...
-                </div> :
-                    <div className="App">
-                        <Navbar name={propsData.name} role={propsData.job_role} />
-                        <BannerComponent data={propsData.banner_img} />
-                        <AboutMeComponent
-                            info={propsData.info}
-                            image={propsData.profile_img}
-                            skills={propsData.skills}
-                            socials={propsData.social_media}
-                            contact={propsData.contact_info}
-                        />
-                        <Experience experience={propsData.work_experience} />
-                        <ProjectsComponent projects={propsData.projects} />
-                        <ContactMe />
-                        <Footer />
-                    </div>
-            }
+            {isLoading && <div id='page-loader'>
+                <img className='loader-img' src={loaderImage} alt='loading' />
+                Loading...
+            </div>}
+            <div className="App">
+                <Navbar name={propsData.name} role={propsData.job_role} />
+                <BannerComponent data={propsData.banner_img} />
+                <AboutMeComponent
+                    info={propsData.info}
+                    image={propsData.profile_img}
+                    skills={propsData.skills}
+                    socials={propsData.social_media}
+                    contact={propsData.contact_info}
+                />
+                <Experience experience={propsData.work_experience} />
+                <ProjectsComponent projects={propsData.projects} />
+                <ContactMe />
+                <Footer />
+            </div>
         </>
     )
 }
