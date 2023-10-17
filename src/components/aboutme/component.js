@@ -19,7 +19,7 @@ function AboutMeComponent(props) {
             ).then(response => {
                 response.blob().then(blob => setResume(blob))
             })
-        }, [resume]);
+        }, []);
     function handeDownload() {
         if (resume) {
             const file = URL.createObjectURL(resume);
