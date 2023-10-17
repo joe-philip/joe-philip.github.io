@@ -39,7 +39,7 @@ function App() {
                     Loading...
                 </div> :
                     <div className="App">
-                        <Navbar />
+                        <Navbar name={propsData.name} role={propsData.job_role} />
                         <BannerComponent data={propsData.banner_img} />
                         <AboutMeComponent
                             info={propsData.info}

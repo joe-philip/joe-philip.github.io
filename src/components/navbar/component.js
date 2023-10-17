@@ -7,7 +7,7 @@ const fadeOutAnimation = [{ opacity: 0 }, { opacity: 1 }];
 const headerCloseAnimation = [{ height: '108px' }, { height: '21px' }];
 const animationTiming = { duration: 1000, iterations: 1 };
 
-function Navbar() {
+function Navbar(props) {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [menuState, setMenuState] = useState('closed')
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -17,7 +17,7 @@ function Navbar() {
             <nav id='navbar'>
                 <ul id='navlist'>
                     <li className='nav-item'>
-                        <a href='/' className='nav-link'>Joe Philip</a>
+                        <a href='/' className='nav-link'>{props.name} - {props.role}</a>
                         {
                             screenWidth <= 412 ?
                                 menuState === 'closed' ?
