@@ -46,6 +46,7 @@ function App() {
                     skills={propsData.skills}
                     socials={propsData.social_media}
                     contact={propsData.contact_info}
+                    resume={propsData.resume}
                 />
                 <Experience experience={propsData.work_experience} />
                 <ProjectsComponent projects={propsData.projects} />

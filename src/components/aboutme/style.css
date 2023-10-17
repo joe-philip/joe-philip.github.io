@@ -59,6 +59,27 @@
     text-align: justify;
 }
 
+.resume {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 5px;
+    padding: 10px 0;
+}
+
+.resume a {
+    text-decoration: none;
+    transition: 1s all;
+}
+
+.resume a:hover {
+    color: var(--color-text-secondary);
+}
+
+#download-resume {
+    cursor: pointer;
+}
+
 .about-me-intro b {
     color: var(--color-text-primary);
 }
