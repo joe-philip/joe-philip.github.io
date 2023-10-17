@@ -1,6 +1,5 @@
 import Heading from '../heading/component';
 import ContactComponent from './contact-component/component';
-import contactData from './contact-component/contact.json';
 import SkillsList from './skills-component/component';
 import SocialsList from './socials-component/socials';
 import './style.css';
@@ -14,7 +13,7 @@ function AboutMeComponent(props) {
                         <div className='about-me-img-container'>
                             <img src={props.image} alt='img' className='about-me-img' />
                         </div>
-                        <ContactComponent data={contactData} />
+                        {props.contact && <ContactComponent data={props.contact} />}
                         <div className='skills'>
                             <h3 className='skills-title'>Skills</h3>
                             {props.skills && <SkillsList data={props.skills} />}

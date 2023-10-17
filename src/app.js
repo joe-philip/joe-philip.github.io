@@ -35,7 +35,7 @@ function App() {
         <>
             {
                 isLoading ? <div id='loader'>
-                    <img className='loader-img' src={loaderImage} />
+                    <img className='loader-img' src={loaderImage} alt='loading' />
                     Loading...
                 </div> :
                     <div className="App">
@@ -46,6 +46,7 @@ function App() {
                             image={propsData.profile_img}
                             skills={propsData.skills}
                             socials={propsData.social_media}
+                            contact={propsData.contact_info}
                         />
                         <Experience experience={propsData.work_experience} />
                         <ProjectsComponent projects={propsData.projects} />

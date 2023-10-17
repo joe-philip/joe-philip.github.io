@@ -1,15 +1,13 @@
-import './style.css'
+import './style.css';
 
 function ContactComponent(props) {
-    var capitalize = value => value.charAt(0).toUpperCase() + value.slice(1);
-    const contactKeys = Object.keys(props.data);
     return (
         <div className="about-me-info">
             {
-                contactKeys.map(
+                props.data.map(
                     key => <>
-                        <span className='key'>{capitalize(key)}:</span>
-                        <span className='val'>{props.data[key]}</span>
+                        <span className='key'>{key.key}:&nbsp;</span>
+                        <span className='val'>{key.value}</span>
                     </>
                 )
             }
