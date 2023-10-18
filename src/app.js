@@ -8,7 +8,6 @@ import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
-import loaderImage from './loader.webp'
 
 function App() {
     const [propsData, setPropsData] = useState({});
@@ -34,7 +33,7 @@ function App() {
     return (
         <>
             {isLoading && <div id='page-loader'>
-                <img className='loader-img' src={loaderImage} alt='loading' />
+                <div className='page-spinner'></div>
                 Loading...
             </div>}
             <div className="App">
