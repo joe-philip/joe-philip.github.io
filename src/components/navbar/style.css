@@ -34,6 +34,10 @@
     font-size: large;
 }
 
+.toggle-color-theme {
+    cursor: pointer;
+}
+
 #hamburger-menu-open,
 #hamburger-menu-close {
     text-decoration: none;

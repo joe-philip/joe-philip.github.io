@@ -8,10 +8,13 @@ import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
+import { setDarkTheme, setLightTheme } from './utils';
 
 function App() {
     const [propsData, setPropsData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [colorTheme, setColorTheme] = useState(1)
+    function setColorThemeState(state) { setColorTheme(state) }
     const apiURL = `${process.env.REACT_APP_API_URL}/profile`;
     useEffect(
         () => {
@@ -28,6 +31,11 @@ function App() {
                     }
                 }
             )
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setDarkTheme();
+            } else {
+                setLightTheme();
+            }
         }, [apiURL]
     );
     return (
@@ -37,7 +45,12 @@ function App() {
                 Loading...
             </div>}
             <div className="App">
-                <Navbar name={propsData.name} role={propsData.job_role} />
+                <Navbar
+                    name={propsData.name}
+                    role={propsData.job_role}
+                    colorTheme={colorTheme}
+                    setColorTheme={setColorThemeState}
+                />
                 <BannerComponent data={propsData.banner_img} />
                 <AboutMeComponent
                     info={propsData.info}

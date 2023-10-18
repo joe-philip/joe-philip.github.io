@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { setDarkTheme, setLightTheme } from '../../utils';
 import './style.css';
 
 const headerOpenAnimation = [{ height: '21px' }, { height: '108px' }];
@@ -11,6 +12,16 @@ function Navbar(props) {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [menuState, setMenuState] = useState('closed')
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
+    function toggleColorTheme(colorTheme) {
+        if (colorTheme === 1) {
+            setDarkTheme()
+            props.setColorTheme(0)
+        }
+        else {
+            setLightTheme()
+            props.setColorTheme(1)
+        }
+    }
 
     return (
         <header id='header'>
@@ -32,6 +43,16 @@ function Navbar(props) {
                     </li>
                     <li className='nav-item'><a href='#projects' className='nav-link'>Projects</a></li>
                     <li className='nav-item'><a href='#contact-me' className='nav-link'>Contact me</a></li>
+                    {
+                        props.setColorTheme && <li className='nav-item toggle-color-theme' title='Toggle light/dark theme'>
+                            {
+                                // eslint-disable-next-line
+                                <a onClick={() => toggleColorTheme(props.colorTheme)} className='nav-link'>
+                                <ion-icon name="contrast-outline"></ion-icon>
+                            </a>
+                            }
+                        </li>
+                    }
                 </ul>
             </nav>
         </header>
