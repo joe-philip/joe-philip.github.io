@@ -5,6 +5,7 @@
     position: sticky;
     box-shadow: 0px 2px 50px 2px var(--color-divider);
     z-index: 1;
+    transition: 1s all cubic-bezier(.68,-0.55,.27,1.55);
 }
 
 #navlist {

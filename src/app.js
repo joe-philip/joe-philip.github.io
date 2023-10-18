@@ -33,8 +33,10 @@ function App() {
             )
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 setDarkTheme();
+                setColorTheme(0)
             } else {
                 setLightTheme();
+                setColorTheme(1)
             }
         }, [apiURL]
     );
