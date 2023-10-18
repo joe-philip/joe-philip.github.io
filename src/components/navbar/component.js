@@ -7,6 +7,21 @@ const navLinkAnimation = [{ opacity: 0 }, { opacity: 0 }, { opacity: 1 }];
 const fadeOutAnimation = [{ opacity: 0 }, { opacity: 1 }];
 const headerCloseAnimation = [{ height: '108px' }, { height: '21px' }];
 const animationTiming = { duration: 1000, iterations: 1 };
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('#header');
+    const bannerImage = document.getElementById('banner'); // Replace with your banner image ID or class
+
+    window.addEventListener('scroll', () => {
+        const bannerImageBottom = bannerImage.getBoundingClientRect().bottom;
+        const root = document.documentElement;
+        if (bannerImageBottom <= 0) {
+            navbar.style.backgroundColor = `${root.style.getPropertyValue('--color-background-primary')}ff`; // Opaque background
+        } else {
+            navbar.style.backgroundColor = `${root.style.getPropertyValue('--color-background-primary')}88`; // Transparent background
+        }
+    });
+});
+
 
 function Navbar(props) {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -48,8 +63,8 @@ function Navbar(props) {
                             {
                                 // eslint-disable-next-line
                                 <a onClick={() => toggleColorTheme(props.colorTheme)} className='nav-link'>
-                                <ion-icon name="contrast-outline"></ion-icon>
-                            </a>
+                                    <ion-icon name="contrast-outline"></ion-icon>
+                                </a>
                             }
                         </li>
                     }
