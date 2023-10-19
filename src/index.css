@@ -28,6 +28,11 @@ html {
   color: var(--color-text-primary);
 }
 
+a,
+a * {
+  color: var(--color-accent-1);
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
