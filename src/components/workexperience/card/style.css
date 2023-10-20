@@ -62,11 +62,13 @@
     grid-column-end: 4;
 }
 
-.roles-and-responsibilites {
+.roles-and-responsibilites,
+.achievements {
     list-style: none;
 }
 
-.roles-and-responsibilites>li {
+.roles-and-responsibilites>li,
+.achievements>li {
     margin: 5px 0;
 }
 

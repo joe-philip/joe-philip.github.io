@@ -36,6 +36,18 @@ function WorkExperienceCardComponent(props) {
                     </ul>
                 </>
             }
+            {props.experienceData.achievements && props.experienceData.achievements.length >= 1 &&
+                <>
+                    Achievement{props.experienceData.achievements.length > 1 ? 's' : ''}:
+                    <ul className='achievements'>
+                        {
+                            props.experienceData.achievements.map(
+                                i => <li key={i.id}>{i.label}</li>
+                            )
+                        }
+                    </ul>
+                </>
+            }
         </div>
     );
 }
