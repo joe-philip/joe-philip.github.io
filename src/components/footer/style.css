@@ -1,6 +1,6 @@
 footer {
     background-color: var(--color-background-primary);
-    box-shadow: 0px 10px 10px 10px var(--color-divider);
+    box-shadow: var(--card-shadow);
     min-height: 35px;
     display: flex;
     align-items: center;
