@@ -39,6 +39,30 @@ function App() {
             }
         }, [apiURL]
     );
+    useEffect(
+        () => {
+            const handleScroll = () => {
+                const banner = document.getElementById('banner');
+
+                if (banner) {
+                    const distance = banner.getBoundingClientRect().bottom;
+                    const root = document.documentElement;
+                    const cssVariableValue = getComputedStyle(root).getPropertyValue('--color-background-primary');
+                    document.documentElement.style.setProperty(
+                        '--navbar-bg',
+                        distance <= 0 ? `${cssVariableValue}ff` : `${cssVariableValue}aa`
+                    );
+                }
+            }
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+
+            // Clean up the event listener when the component unmounts
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []
+    );
     return (
         <>
             {isLoading && <div id='page-loader'>

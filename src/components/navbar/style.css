@@ -1,5 +1,5 @@
 #header {
-    background-color: var(--color-background-primary);
+    background-color: var(--navbar-bg);
     padding: 10px;
     top: 0;
     position: sticky;

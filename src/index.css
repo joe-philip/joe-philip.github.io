@@ -13,6 +13,7 @@
   --card-border-radius: 10px;
   --card-padding: 10px;
   --card-font: 'Fira Sans', sans-serif;
+  --navbar-bg: --var(--color-background-primary);
 }
 
 html {
