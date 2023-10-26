@@ -14,7 +14,6 @@ function App() {
     const [propsData, setPropsData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [colorTheme, setColorTheme] = useState(1)
-    function setColorThemeState(state) { setColorTheme(state) }
     const apiURL = `${process.env.REACT_APP_API_URL}/profile`;
     useEffect(
         () => {
@@ -51,7 +50,7 @@ function App() {
                     name={propsData.name}
                     role={propsData.job_role}
                     colorTheme={colorTheme}
-                    setColorTheme={setColorThemeState}
+                    setColorTheme={state => setColorTheme(state)}
                 />
                 <BannerComponent data={propsData.banner_img} />
                 <AboutMeComponent
