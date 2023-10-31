@@ -50,9 +50,13 @@
     color: var(--color-text-secondary);
 }
 
-.input-element{
+.input-element {
     padding: 0px 10px;
     width: 100%;
+}
+
+.input-element * {
+    padding: 0 0 0 5px;
 }
 
 .form-row {
@@ -62,7 +66,7 @@
 }
 
 #submit-button {
-    width: 100%;
+    padding: 0 15px;
     background-color: var(--color-accent-1);
     color: var(--color-text-primary);
     border-radius: 5px;
@@ -77,11 +81,16 @@
     cursor: pointer;
 }
 
-.error-list{
+.submit-btn-row {
+    justify-content: center;
+}
+
+.error-list {
     font-size: small;
     list-style: none;
 }
-.error-list *{
+
+.error-list * {
     color: var(--color-accent-2);
 }
 

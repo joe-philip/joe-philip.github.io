@@ -100,7 +100,7 @@ function ContactMe() {
                         <input onInput={handleChange} value={formData.message} type="textarea" placeholder="Message" name="message" required />
                     </div>
                 </div>
-                <div className="form-row">
+                <div className="form-row submit-btn-row">
                     <button id="submit-button" onClick={submitForm}>Submit</button>
                 </div>
             </form>
