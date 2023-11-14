@@ -3,7 +3,7 @@
 .projects-container {
     display: flex;
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
