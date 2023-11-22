@@ -24,11 +24,7 @@ function App() {
                 response => {
                     setIsLoading(false);
                     if (response.status === 200) {
-                        response.json().then(
-                            response => {
-                                setPropsData(response.data)
-                            }
-                        )
+                        response.json().then(response => setPropsData(response.data))
                     }
                 }
             )
