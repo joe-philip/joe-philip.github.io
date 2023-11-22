@@ -42,7 +42,7 @@ function Navbar(props) {
                             {
                                 // eslint-disable-next-line
                                 <a onClick={() => dispatch(toggleThemeAction())} className='nav-link'>
-                                    <ion-icon name={theme === 0 ? "sunny-outline" : "moon-outline"}></ion-icon>
+                                    <ion-icon name={theme === 0 ? "sunny" : "moon"}></ion-icon>
                                 </a>
                             }
                         </li>
