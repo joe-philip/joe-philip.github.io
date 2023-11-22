@@ -6,7 +6,7 @@ function SocialsList(props) {
             {
                 props.data.map(
                     social => <li key={social.id}>
-                        <a href={social.link} target='_blank'>
+                        <a href={social.link} target='_blank' rel='noreferrer'>
                             <ion-icon name={social.icon}></ion-icon>
                         </a>
                     </li>

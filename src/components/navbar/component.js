@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleThemeAction } from '../../redux/actions/toggleTheme';
 import './style.css';
 
@@ -11,10 +11,11 @@ const animationTiming = { duration: 1000, iterations: 1 };
 
 
 function Navbar(props) {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const theme = useSelector(state => state.theme);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    const [menuState, setMenuState] = useState('closed')
-    window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
+    const [menuState, setMenuState] = useState('closed');
+    window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
 
     return (
         <header id='header'>
@@ -41,7 +42,7 @@ function Navbar(props) {
                             {
                                 // eslint-disable-next-line
                                 <a onClick={() => dispatch(toggleThemeAction())} className='nav-link'>
-                                    <ion-icon name="contrast-outline"></ion-icon>
+                                    <ion-icon name={theme === 0 ? "sunny-outline" : "moon-outline"}></ion-icon>
                                 </a>
                             }
                         </li>
