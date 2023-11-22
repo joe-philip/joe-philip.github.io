@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toggleThemeAction } from '../../redux/actions/toggleTheme';
 import './style.css';
 
@@ -11,7 +11,6 @@ const animationTiming = { duration: 1000, iterations: 1 };
 
 
 function Navbar(props) {
-    const colorTheme = useSelector(state => state.theme);
     const dispatch = useDispatch()
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [menuState, setMenuState] = useState('closed')
