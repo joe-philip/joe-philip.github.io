@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { connect, useSelector } from 'react-redux';
 import './app.css';
 import AboutMeComponent from './components/aboutme/component';
 import BannerComponent from './components/banner-img/component';
@@ -8,13 +9,14 @@ import Navbar from './components/navbar/component';
 import ProjectsComponent from './components/projects/component';
 import Experience from './components/workexperience/component';
 import './index.css';
+import { toggleThemeAction } from './redux/actions/toggleTheme';
 import { setDarkTheme, setLightTheme } from './utils';
 
 function App() {
     const [propsData, setPropsData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-    const [colorTheme, setColorTheme] = useState(1)
     const apiURL = `${process.env.REACT_APP_API_URL}/profile`;
+    const theme = useSelector(state => state.theme)
     useEffect(
         () => {
             setIsLoading(true);
@@ -30,17 +32,6 @@ function App() {
                     }
                 }
             )
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setDarkTheme();
-                setColorTheme(0)
-            } else {
-                setLightTheme();
-                setColorTheme(1)
-            }
-        }, [apiURL]
-    );
-    useEffect(
-        () => {
             const handleScroll = () => {
                 const banner = document.getElementById('banner');
 
@@ -56,13 +47,11 @@ function App() {
             }
             // Add scroll event listener
             window.addEventListener('scroll', handleScroll);
-
             // Clean up the event listener when the component unmounts
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
+            return () => window.removeEventListener('scroll', handleScroll); // eslint-disable-next-line
         }, []
     );
+    useEffect(() => { theme === 0 ? setDarkTheme() : setLightTheme() }, [theme])
     return (
         <>
             {isLoading && <div id='page-loader'>
@@ -73,8 +62,6 @@ function App() {
                 <Navbar
                     name={propsData.name}
                     role={propsData.job_role}
-                    colorTheme={colorTheme}
-                    setColorTheme={state => setColorTheme(state)}
                 />
                 <BannerComponent data={propsData.banner_img} />
                 <AboutMeComponent
@@ -94,4 +81,12 @@ function App() {
     )
 }
 
-export default App;
+function mapStateToProps(state) {
+    return { theme: state.theme }
+}
+
+function mapDispatchToProps(dispatch) {
+    return { toggleTheme: () => dispatch(toggleThemeAction()) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
