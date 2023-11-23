@@ -7,12 +7,7 @@ function RefreshPageComponent() {
 
     return (
         <div id="refresh">
-            <button
-                onClick={
-                    () => {
-                        return dispatch(toggleRefreshAction());
-                    }
-                }>
+            <button onClick={() => dispatch(toggleRefreshAction())}>
                 <ion-icon name="reload"></ion-icon>
             </button>
         </div>
