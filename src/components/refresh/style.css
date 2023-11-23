@@ -4,6 +4,8 @@
     position: fixed;
 }
 
-#refresh a{
+#refresh button {
+    background: none;
+    border: none;
     font-size: xx-large;
 }
