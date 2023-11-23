@@ -1,0 +1,9 @@
+#refresh {
+    left: 1vw;
+    bottom: 1vh;
+    position: fixed;
+}
+
+#refresh a{
+    font-size: xx-large;
+}

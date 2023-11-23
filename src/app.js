@@ -11,12 +11,13 @@ import Experience from './components/workexperience/component';
 import './index.css';
 import { toggleThemeAction } from './redux/actions/toggleTheme';
 import { setDarkTheme, setLightTheme } from './utils';
+import RefreshPageComponent from './components/refresh/component';
 
 function App() {
     const [propsData, setPropsData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const apiURL = `${process.env.REACT_APP_API_URL}/profile`;
-    const theme = useSelector(state => state.theme)
+    const [theme, refresh] = [useSelector(state => state.theme), useSelector(state => state.refresh)]
     useEffect(
         () => {
             setIsLoading(true);
@@ -45,7 +46,7 @@ function App() {
             window.addEventListener('scroll', handleScroll);
             // Clean up the event listener when the component unmounts
             return () => window.removeEventListener('scroll', handleScroll); // eslint-disable-next-line
-        }, []
+        }, [refresh]
     );
     useEffect(() => { theme === 0 ? setDarkTheme() : setLightTheme() }, [theme])
     return (
@@ -72,6 +73,7 @@ function App() {
                 <ProjectsComponent projects={propsData.projects} />
                 <ContactMe />
                 <Footer />
+                <RefreshPageComponent />
             </div>
         </>
     )

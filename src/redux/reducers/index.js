@@ -1,7 +1,8 @@
-import { DARK_THEME, LIGHT_THEME, TOGGLE_THEME } from "../actions/toggleTheme";
+import { DARK_THEME, LIGHT_THEME, TOGGLE_REFRESH, TOGGLE_THEME } from "../actions/toggleTheme";
 
 const initialState = {
-    theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 0 : 1
+    theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 0 : 1,
+    refresh: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,10 @@ const reducer = (state = initialState, action) => {
         case LIGHT_THEME: return {
             ...state,
             theme: 1
+        }
+        case TOGGLE_REFRESH: return {
+            ...state,
+            refresh: !state.refresh
         }
         default: return state
     }

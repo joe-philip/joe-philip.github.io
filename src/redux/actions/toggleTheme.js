@@ -1,6 +1,7 @@
 export const TOGGLE_THEME = 'TOGGLE_THEME';
 export const DARK_THEME = 'DARK_THEME';
 export const LIGHT_THEME = 'LIGHT_THEME';
+export const TOGGLE_REFRESH = 'TOGGLE_REFRESH';
 
 export const toggleThemeAction = () => {
     return {
@@ -15,5 +16,10 @@ export const darkThemeAction = () => {
 export const lightThemeAction = () => {
     return {
         type: LIGHT_THEME
+    };
+};
+export const toggleRefreshAction = () => {
+    return {
+        type: TOGGLE_REFRESH
     };
 };
