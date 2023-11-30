@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Heading from "../heading/component";
 import './style.css';
+import sendEmailFormSpree from './form'
 
 function ContactMe() {
     const [formData, setFormData] = useState({
@@ -30,6 +31,7 @@ function ContactMe() {
         }).then(response => {
             setLoading(false);
             if (response.status === 200) {
+                sendEmailFormSpree(formData);
                 responseElement.className = 'response success temp'
                 responseElement.innerHTML = 'Message sent!'
                 form.appendChild(responseElement);
