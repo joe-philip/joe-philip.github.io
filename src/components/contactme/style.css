@@ -58,7 +58,7 @@
 
 .input-element {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
 }
 
