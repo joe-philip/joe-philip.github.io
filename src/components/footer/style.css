@@ -1,5 +1,4 @@
 footer {
-    background-color: var(--color-background-primary);
     box-shadow: var(--card-shadow);
     min-height: 35px;
     display: flex;
