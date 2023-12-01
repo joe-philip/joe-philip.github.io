@@ -34,13 +34,14 @@
 #contact-me-form input[type="textarea"] {
     background-color: transparent;
     outline: none;
-    border: 1px solid var(--color-border);
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    border-left: none;
     height: 25px;
-    border-radius: 5px;
     color: var(--color-text-primary);
     transition: 0.5s all;
-    /* padding: 5px; */
-    width: 100%;
+    flex: 1;
 }
 
 #contact-me-form input[type="text"]:focus,
@@ -50,19 +51,15 @@
     color: var(--color-text-secondary);
 }
 
-.input-element {
-    padding: 0px 10px;
-    width: 100%;
-}
-
-.input-element * {
-    padding: 0 0 0 5px;
-}
-
 .form-row {
     display: flex;
     flex-direction: row;
-    /* gap: 10px; */
+}
+
+.input-element {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
 }
 
 #submit-button {
