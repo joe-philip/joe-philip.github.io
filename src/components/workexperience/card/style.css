@@ -12,14 +12,18 @@
 }
 
 .work-experience-card {
-    box-shadow: var(--card-shadow);
     display: inline-flex;
     padding: var(--card-padding);
     flex-direction: column;
-    border-radius: var(--card-border-radius);
     max-width: 35vw;
     justify-content: space-evenly;
     gap: 10px;
+    background: rgba(0, 0, 0, 0.055);
+    border-radius: 16px;
+    box-shadow: 0 0px 10px var(--color-text-secondary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.68);
 }
 
 .work-experience-card * {

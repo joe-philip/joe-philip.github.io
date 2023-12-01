@@ -9,10 +9,14 @@
     flex-direction: row;
     width: 80vw;
     justify-content: center;
-    box-shadow: var(--card-shadow);
-    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     gap: 10px;
+    background: rgba(0, 0, 0, 0.055);
+    border-radius: 16px;
+    box-shadow: 0 0px 10px var(--color-text-secondary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-text-secondary);
 }
 
 .about-me-card * {
