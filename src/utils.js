@@ -10,7 +10,7 @@ const lightThemeColors = {
     'color-text-primary': '#333333',
     'color-text-secondary': '#666666',
 }
-const transparency = 'ff'
+var transparency = 'ff'
 function setDarkTheme() {
     const root = document.documentElement;
     root.style.setProperty('--color-background-primary', darkThemeColors['color-background-alternate']);
