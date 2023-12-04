@@ -3,28 +3,26 @@ const darkThemeColors = {
     'color-background-alternate': '#222222',
     'color-text-primary': '#ffffff',
     'color-text-secondary': '#cccccc',
-    'background-image': 'url(dark_bg.jpg)',
-    
 }
 const lightThemeColors = {
     'color-background-primary': '#ffffff',
     'color-background-alternate': '#f5f5f5',
     'color-text-primary': '#333333',
     'color-text-secondary': '#666666',
-    'background-image': 'url(light_bg.jpg)',
 }
-var transparency = 'ff'
+const transparency = 'ff'
 function setDarkTheme() {
     const root = document.documentElement;
     root.style.setProperty('--color-background-primary', darkThemeColors['color-background-alternate']);
     root.style.setProperty('--color-background-alternate', darkThemeColors['color-background-alternate']);
     root.style.setProperty('--color-text-primary', darkThemeColors['color-text-primary']);
     root.style.setProperty('--color-text-secondary', darkThemeColors['color-text-secondary']);
-    root.style.setProperty('--background-img', darkThemeColors['background-image']);
+    root.style.setProperty('--background-img', `url(${process.env.PUBLIC_URL}/dark_bg.jpg)`);
     const navbarBG = getComputedStyle(root).getPropertyValue('--navbar-bg');
     if (navbarBG.length === 9) {
         transparency = navbarBG.slice(7);
     }
+    document.getElementsByTagName('body')[0].style.backgroundImage = `url(${process.env.PUBLIC_URL}/dark_bg.jpg)`
     root.style.setProperty('--navbar-bg', darkThemeColors['color-background-primary'] + transparency);
 }
 function setLightTheme() {
@@ -38,6 +36,7 @@ function setLightTheme() {
     if (navbarBG.length === 9) {
         transparency = navbarBG.slice(7);
     }
+    document.getElementsByTagName('body')[0].style.backgroundImage = `url(${process.env.PUBLIC_URL}/light_bg.jpg)`
     root.style.setProperty('--navbar-bg', lightThemeColors['color-background-primary'] + transparency);
 }
 

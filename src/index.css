@@ -3,7 +3,6 @@
 :root {
   --color-background-primary: #fff;
   --color-background-alternate: #f5f5f5;
-  --background-img: url('../public/light_bg.jpg');
   --color-text-primary: #333333;
   --color-text-secondary: #666666;
   --color-accent-1: #007ACC;
