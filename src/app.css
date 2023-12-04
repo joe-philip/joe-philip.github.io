@@ -10,8 +10,12 @@
   left: 0;
   position: fixed;
   z-index: 2;
-  background-color: #f5f5f5d8;
-  transition: 1s all;
+  background: rgba(0, 0, 0, 0.055);
+  border-radius: 16px;
+  box-shadow: 0 0px 10px var(--color-text-secondary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.68);
 }
 
 .loader-img {
