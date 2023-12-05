@@ -48,7 +48,7 @@ function App() {
             return () => window.removeEventListener('scroll', handleScroll); // eslint-disable-next-line
         }, [refresh]
     );
-    useEffect(() => { theme === 0 ? setDarkTheme() : setLightTheme() }, [theme])
+    useEffect(() => theme === 0 ? setDarkTheme() : setLightTheme(), [theme])
     return (
         <>
             {isLoading && <div id='page-loader'>
