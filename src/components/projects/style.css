@@ -71,6 +71,18 @@
 
 }
 
+.commits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.commits-list a {
+    text-decoration: none;
+    transition: 1s all;
+}
+
 @media only screen and (max-width: 611px) {
     .projects-card-container {
         max-width: 80vw;
