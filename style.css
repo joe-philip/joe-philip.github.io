@@ -185,6 +185,12 @@ nav a:hover {
     font-size: 14px;
 }
 
+.exp-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
 footer {
     text-align: center;
     padding: 30px;
@@ -217,4 +223,21 @@ footer {
     justify-content: center;
     font-weight: bold;
     font-size: 20px;
+}
+
+.card.small {
+    padding: 8px 16px;
+    display: inline-block;
+    font-size: 14px;
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.card.small:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.project-title {
+    color: #e2e8f0;
 }
