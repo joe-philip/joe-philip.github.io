@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe Philip</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="logo">JP</div>
+                <div>
+                    <div class="name">Joe Philip</div>
+                    <div class="role">Backend Developer</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <div class="hero-left">
+            <div class="hero-title">Hi, I’m Joe — I build reliable backend systems.</div>
+            <p class="hero-text">
+                Backend developer building scalable Django services. Experienced with PostgreSQL, Docker,
+                Redis, RabbitMQ, and microservices — I deliver reliable APIs and developer-friendly infra.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="https://joephilip.pythonanywhere.com/profile" class="btn-outline">Full Profile</a>
+            </div>
+        </div>
+
+        <div class="card hero-card">
+            <div class="hero-card-header">
+                <div class="hero-avatar">JP</div>
+                <div>
+                    <div class="name">Joe Philip</div>
+                    <div class="role small">Backend Developer</div>
+                </div>
+            </div>
+            <div class="hero-location">Kollam, Kerala</div>
+            <div class="quick-links">
+                <a href="https://github.com/joe-philip" class="card small" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/joe-philip" class="card small" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section container">
+        <h2 class="section-title">About & Skills</h2>
+        <p class="section-text">Developer with strong backend engineering experience in Django, DRF,
+            microservices, Docker, PostgreSQL and cloud deployments.</p>
+
+        <div class="two-col skills-and-highlights-container">
+            <div class="skills-container">
+                <h3 class="sub-title">Skills</h3>
+                <div class="skills-list">
+                    <div class="skill">Python<div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">Django<div class="skill-bar">
+                            <div class="skill-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">DRF<div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">Docker<div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sub-title">Highlights</h3>
+                <ul class="highlights">
+                    <li>Multi-DB Apps</li>
+                    <li>Dockerized Django microservices</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3 class="project-title">Django REST Exception Handler</h3>
+                <p class="project-desc">
+                    The Django REST Framework Exception Handler is a Python package designed to
+                    streamline exception handling within Django REST Framework applications. It ensures a consistent
+                    format for error responses by structuring them in a predefined JSON format.
+                </p>
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip/django_rest_exception_handler" class="card small"
+                        target="_blank">GitHub</a>
+                    <a href="https://pypi.org/project/django-rest-exception-handler/" class="card small"
+                        target="_blank">PyPI</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Django REST token expiry</h3>
+                <p class="project-desc">
+                    Django REST Token Expiry is a Python package designed to add token expiration functionality to
+                    Django REST Framework's default token authentication system. This package allows developers to set
+                    expiry durations for authentication tokens, enhancing security by automatically invalidating tokens
+                    after a specified period.
+                </p>
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip/django_rest_token_expiry" class="card small"
+                        target="_blank">GitHub</a>
+                    <a href="https://pypi.org/project/django-rest-token-expiry/" class="card small"
+                        target="_blank">PyPI</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Django Rest Framework query tools</h3>
+                <p class="project-desc">
+                    The package allows developers to enhance filtering capabilities within Django Rest Framework views
+                    by simply specifying the desired filter fields. By incorporating the URLFilter into views or adding
+                    it to the Django Rest Framework settings, the package streamlines the filtering process.
+                </p>
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip/django_rest_framework_query_tools" class="card small"
+                        target="_blank">GitHub</a>
+                    <a href="https://pypi.org/project/django-rest-framework-query-tools/" class="card small"
+                        target="_blank">PyPI</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Basic markdown snippets extension for vscode</h3>
+                <p class="project-desc">
+                    This extension is designed to enhance your Markdown editing experience by providing a collection of
+                    useful and time-saving code snippets that you can easily insert into your Markdown documents.
+                    Whether you're writing technical documentation, blog posts, or just taking notes, these snippets
+                    will help you format your content quickly and efficiently
+                </p>
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip/markdown-snippets" class="card small"
+                        target="_blank">GitHub</a>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=JoePhilip.markdown-code-snippets"
+                        class="card small" target="_blank">Marketplace</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Python django code snippets for VSCode</h3>
+                <p class="project-desc">
+                    Python django rest framework code snippets for VSCode is a VSCode extension that provides a
+                    collection of useful code snippets for Python programming in Django rest framework. The extension
+                    includes snippets for commonly used code segments, such as loops, functions, file handling, regular
+                    expressions, and more. With this extension, you can save valuable time and effort by quickly
+                    inserting these code segments into your projects, without the need to manually type them out.
+                </p>
+                <div class="quick-links">
+                    <a href="https://gitlab.com/joe-philip/python_code_snippets" class="card small"
+                        target="_blank">GitLab</a>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview"
+                        class="card small" target="_blank">Marketplace</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Random password generator</h3>
+                <p class="project-desc">
+                    Developed a robust password generator application using ReactJS for the front-end and Django for the
+                    backend. This powerful tool creates secure, random passwords for users. With a combination of
+                    front-end user-friendliness and back-end security, it's an ideal solution for enhancing online
+                    safety. Protect your accounts with strong, unique passwords generated on the fly.
+                </p>
+                <div class="quick-links">
+                    <a href="https://joe-philip.github.io/random_password_generator_react" class="card small"
+                        target="_blank">
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/joe-philip/random_password_generator_django" class="card small"
+                        target="_blank">
+                        Backend Repo
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="project-title">Basic Calculator using Python</h3>
+                <p class="project-desc">
+                    Crafted a versatile calculator app using Python's Tkinter module. This user-friendly tool
+                    streamlines arithmetic tasks, enabling quick calculations for addition, subtraction,
+                    multiplication, and division. Its intuitive interface caters to daily mathematical needs.
+                    Whether you're a student or professional, this app simplifies number crunching.
+                </p>
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip/calcPythonTkinter" class="card small" target="_blank">
+                        Repo
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <section id="experience" class="section container">
+        <h2 class="section-title">Experience</h2>
+        <div class="exp-list">
+            <div class="card">
+                <strong>Backend Developer — Admaren Tech</strong>
+                <div class="exp-date">Mar 2024 – Present</div>
+                <ul class="exp-details">
+                    <li>Develop efficient API's for web apps.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <strong>Python Developer — Aatoon Solutions</strong>
+                <div class="exp-date">Nov 2021 – Feb 2024</div>
+                <ul class="exp-details">
+                    <li>Develop Database diagrams for projects.</li>
+                    <li>Develop REST API's for web apps.</li>
+                    <li>Add custom features for API's.</li>
+                    <li>Define custom functionalities for django projects.</li>
+                    <li>Define web sockets in web apps for real-time app features.</li>
+                    <li>Integrate external API services inside apps.</li>
+                    <li>Provide python training to interns.</li>
+                    <li>Implement server side cache.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <strong>Scopos Technologies</strong>
+                <div class="exp-date">Feb 2021 – September 2024</div>
+                <ul class="exp-details">
+                    <li>Provide python training to new interns.</li>
+                    <li>Design Responsive HTML forms for projects.</li>
+                    <li>Work part in Django projects.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section container">
+        <h2 class="section-title">Contact</h2>
+        <div class="two-col">
+            <div class="card">
+                Kollam, Kerala<br>
+                Phone: +91 96336 89769<br>
+                Email: joe.philip@hotmail.co.in
+                <div class="quick-links">
+                    <a href="https://github.com/joe-philip" class="card small">GitHub</a>
+                    <a href="https://linkedin.com/in/joe-philip" class="card small">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- <form class="card" onsubmit="sendMail(event)">
+                <label>Your name</label>
+                <input class="input" />
+
+                <label>Message</label>
+                <textarea rows="4" class="input"></textarea>
+
+                <button class="btn-primary" type="submit">Send</button>
+            </form> -->
+        </div>
+    </section>
+
+    <footer>© 2025 Joe Philip. All rights reserved.</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
