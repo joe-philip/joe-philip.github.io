@@ -241,3 +241,46 @@ footer {
 .project-title {
     color: #e2e8f0;
 }
+
+/* Animations */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary,
+.btn-outline {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+nav a {
+    transition: color 0.3s ease;
+}
+
+/* Scroll Reveal */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
