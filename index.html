@@ -1,274 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joe Philip</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joe Philip · Backend Developer</title>
+<meta name="description" content="Joe Philip — Python / Django backend developer in Kerala, India. Experience, projects, skills and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, clean, engineer's resume — few hues, air, precise detail.
+   IDEA: the resume behaves like a live API request travelling through Joe's stack.
+   PICTURE: an animated request-flow diagram — client → Django REST API → DB, gRPC, queues.
+   COLOUR and TYPE: ice ground, deep ink, one hot-pink accent; Space Grotesk titles, Inter body.
+   LAYOUT: hero with picture, figures row, scroll-drawn timeline, skills, projects, contact band. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#dff1f7,#06222e);--ink:light-dark(#06222e,#dff1f7);
+  --card:light-dark(#ffffff,#0b3242);--line:light-dark(#b9dbe6,#174a5c);
+  --soft:light-dark(#3d5c68,#9cc3cf);--pink:#ff2e7e;--pinkSoft:light-dark(#ffe1ec,#4a1430);
+  --ink2:light-dark(#06222e,#021720)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(32px,4.4vw,46px);margin-bottom:12px}
+h3{font-size:20px;line-height:1.25}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+.lead{color:var(--soft);max-width:62ch;margin:0 0 36px;font-size:17px}
+
+/* progress + nav */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--pink);transform-origin:0 50%;transform:scaleX(0);z-index:30}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font:600 18px "Space Grotesk",sans-serif;text-decoration:none;margin-right:auto}
+.logo b{color:var(--pink)}
+.links{display:flex;gap:4px;flex-wrap:wrap}
+.links a{text-decoration:none;font-size:15px;padding:10px 12px;border-radius:999px;color:var(--soft);transition:.2s}
+.links a:hover,.links a.on{color:var(--ink);background:var(--card)}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hello{font-size:17px;color:var(--soft);margin:0 0 14px}
+.hero h1{font-size:clamp(46px,7.4vw,92px);letter-spacing:-.02em}
+.hero h1 span{display:block;color:var(--pink)}
+.hero p.sum{font-size:17px;max-width:56ch;margin:24px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:focus-visible,.links a:focus-visible,.proj a:focus-visible,.contact a:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.meta{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:28px;color:var(--soft);font-size:15px}
+.meta span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-right:8px;vertical-align:middle}
+.flow{background:var(--ink2);border-radius:28px;padding:clamp(16px,3vw,28px);box-shadow:0 30px 60px -30px rgba(6,34,46,.55);color:#dff1f7}
+.flow svg{display:block;width:100%;height:auto}
+.flow .cap{display:flex;justify-content:space-between;gap:12px;font:500 13px "JetBrains Mono",monospace;color:#9cc3cf;margin-bottom:12px;flex-wrap:wrap}
+.flow .cap b{color:#5ee0a0;font-weight:500}
+.node rect{fill:#0f3a4b;stroke:#2a6377}
+.node.api rect{fill:#ff2e7e;stroke:#ff6fa6}
+.node text{fill:#dff1f7;font:600 15px "Space Grotesk",sans-serif;text-anchor:middle}
+.node text.s{font:500 12px Inter,sans-serif;fill:#9cc3cf}
+.node.api text,.node.api text.s{fill:#fff}
+.wire{fill:none;stroke:#2a6377;stroke-width:2;stroke-dasharray:5 6;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.pkt{fill:#5ee0a0}.pkt.p{fill:#ff2e7e}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:clamp(40px,6vw,72px)}
+.fig{background:var(--card);border-radius:20px;padding:22px}
+.fig b{display:block;font:600 clamp(36px,4.4vw,52px)/1 "Space Grotesk",sans-serif}
+.fig b i{font-style:normal;color:var(--pink)}
+.fig span{color:var(--soft);font-size:15px}
+
+/* timeline */
+.exp{background:var(--card)}
+.tl{position:relative;padding-left:44px;max-width:900px}
+.tl::before,.tl .fill{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;border-radius:3px;background:var(--line)}
+.tl .fill{background:var(--pink);transform-origin:top;transform:scaleY(0);bottom:6px}
+.job{position:relative;padding-bottom:44px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-41px;top:4px;width:19px;height:19px;border-radius:50%;background:var(--card);border:3px solid var(--line);transition:.4s}
+.job.in::before{border-color:var(--pink);background:var(--pink);box-shadow:0 0 0 6px var(--pinkSoft)}
+.when{font-size:14px;color:var(--soft);white-space:nowrap}
+.job h3{margin:4px 0 2px}
+.org{font-weight:500;margin:0 0 10px}
+.job ul{margin:0;padding-left:20px;color:var(--soft)}
+.job li{margin:4px 0}
+.badge{display:inline-block;font-size:13px;font-weight:600;background:var(--pinkSoft);color:light-dark(#b0004a,#ff9cc2);padding:3px 10px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.now{background:#5ee0a0;color:#06222e}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sk{background:var(--card);border-radius:20px;padding:24px}
+.sk h3{margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg)}
+.chips span.k{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* projects */
+.projs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px}
+.proj{background:var(--card);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .3s,box-shadow .3s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(6,34,46,.5)}
+.proj .type{font-size:13px;font-weight:600;color:var(--pink)}
+.proj p{margin:0;color:var(--soft);flex:1}
+.proj .ls{display:flex;gap:6px 16px;flex-wrap:wrap}
+.proj .ls a{font-weight:600;font-size:15px;text-decoration-color:var(--pink);text-underline-offset:4px;padding:6px 0}
+
+/* edu & certs */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,4vw,56px)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.rows li div b{display:block;font-weight:600}
+.rows li div span{color:var(--soft);font-size:15px}
+.rows .d{color:var(--soft);font-size:14px;white-space:nowrap;text-align:right}
+
+/* contact */
+.contact{background:var(--ink2);color:#dff1f7}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(40px,6vw,72px)}
+.contact h2 span{color:var(--pink)}
+.contact p{color:#9cc3cf;max-width:52ch}
+.clist{display:grid;gap:10px}
+.clist a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 20px;border-radius:16px;background:#0f3a4b;text-decoration:none;transition:background .2s,transform .2s}
+.clist a:hover{background:#ff2e7e;transform:translateX(4px)}
+.clist small{color:#9cc3cf;font-size:13px}.clist a:hover small{color:#fff}
+.clist b{font-weight:600;overflow-wrap:anywhere;text-align:right}
+footer{background:var(--ink2);color:#9cc3cf;font-size:14px;text-align:center;padding:24px 16px;border-top:1px solid #174a5c}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.l{transform:translateX(-36px)}.rv.r{transform:translateX(36px)}.rv.z{transform:scale(.94)}
+.rv.in{opacity:1;transform:none}
+.hero h1 .w{display:inline-block;animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+
+@media(max-width:900px){.hero .wrap,.two,.contact .wrap{grid-template-columns:minmax(0,1fr)}.skills{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.figs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.skills{grid-template-columns:minmax(0,1fr)}.links{display:none}.tl{padding-left:36px}.job::before{left:-33px}.rows li{flex-direction:column;gap:2px}.rows .d{text-align:left}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv,.hero h1 .w{opacity:1;transform:none;transition:none;animation:none}.wire{animation:none}.pkt{display:none}#progress{display:none}}
+</style>
 </head>
-
 <body>
-    <header>
-        <div class="container header-inner">
-            <div class="brand">
-                <div class="logo">JP</div>
-                <div>
-                    <div class="name">Joe Philip</div>
-                    <div class="role">Backend Developer</div>
-                </div>
-            </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+<div id="progress"></div>
 
-    <section class="hero container">
-        <div class="hero-left hidden">
-            <div class="hero-title">Hi, I’m Joe — I build reliable backend systems.</div>
-            <p class="hero-text">
-                Backend developer building scalable Django services. Experienced with PostgreSQL, Docker,
-                Redis, RabbitMQ, and microservices — I deliver reliable APIs and developer-friendly infra.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View Projects</a>
-            </div>
-        </div>
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">joe<b>.</b>philip</a>
+  <div class="links">
+    <a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
 
-        <div class="card hero-card hidden">
-            <div class="hero-card-header">
-                <div class="hero-avatar">JP</div>
-                <div>
-                    <div class="name">Joe Philip</div>
-                    <div class="role small">Backend Developer</div>
-                </div>
-            </div>
-            <div class="hero-location">Kollam, Kerala</div>
-            <div class="quick-links">
-                <a href="https://github.com/joe-philip" class="card small" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/joe-philip" class="card small" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </section>
+<header class="band hero" id="top"><div class="wrap">
+  <div>
+    <p class="hello rv">Hi, I'm Joe — I build the parts of the web you don't see.</p>
+    <h1><span class="w">Joe Philip</span><span class="w" style="animation-delay:.15s">Backend Developer</span></h1>
+    <p class="sum rv" style="--d:.3s">Python and Django developer with 5+ years building scalable web APIs with Django REST Framework, after a year-long internship. I design databases, wire up microservices with gRPC, and keep background work flowing with Celery, Redis and RabbitMQ. I also publish open-source packages on PyPI and extensions on the VS Code Marketplace.</p>
+    <div class="cta rv" style="--d:.4s">
+      <a class="btn main" href="#contact">Get in touch</a>
+      <a class="btn" href="#projects">See my work</a>
+    </div>
+    <div class="meta rv" style="--d:.5s"><span>Kollam, Kerala, India</span><span>Open to relocation</span><span>Remote, hybrid or on-site</span></div>
+  </div>
 
-    <section id="about" class="section container">
-        <h2 class="section-title hidden">About & Skills</h2>
-        <p class="section-text hidden">Developer with strong backend engineering experience in Django, DRF,
-            microservices, Docker, PostgreSQL and cloud deployments.</p>
+  <div class="flow rv z" style="--d:.2s" aria-label="Diagram: a request travels from the client through a Django REST API to a database, gRPC services and a task queue">
+    <div class="cap"><span>POST /api/v1/hire-joe</span><b>201 Created</b></div>
+    <svg viewBox="0 0 450 400" role="img">
+      <defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".35"/></filter></defs>
+      <path id="p0" class="wire" d="M110 200 H150"/>
+      <path id="p1" class="wire" d="M270 200 C300 200 300 62 330 62"/>
+      <path id="p2" class="wire" d="M270 200 H330"/>
+      <path id="p3" class="wire" d="M270 200 C300 200 300 338 330 338"/>
+      <g class="node" filter="url(#sh)"><rect x="8" y="168" width="102" height="64" rx="14"/><text x="59" y="196">Client</text><text class="s" x="59" y="216">web · mobile</text></g>
+      <g class="node api" filter="url(#sh)"><rect x="150" y="156" width="120" height="88" rx="16"/><text x="210" y="192">Django</text><text x="210" y="212">REST API</text><text class="s" x="210" y="232">Python · DRF</text></g>
+      <g class="node" filter="url(#sh)"><rect x="330" y="30" width="112" height="64" rx="14"/><text x="386" y="58">Database</text><text class="s" x="386" y="78">schema design</text></g>
+      <g class="node" filter="url(#sh)"><rect x="330" y="168" width="112" height="64" rx="14"/><text x="386" y="196">gRPC</text><text class="s" x="386" y="216">microservices</text></g>
+      <g class="node" filter="url(#sh)"><rect x="330" y="306" width="112" height="64" rx="14"/><text x="386" y="334">Celery</text><text class="s" x="386" y="354">Redis · RabbitMQ</text></g>
+      <circle class="pkt p" r="5"><animateMotion dur="1.2s" repeatCount="indefinite"><mpath href="#p0"/></animateMotion></circle>
+      <circle class="pkt" r="5"><animateMotion dur="1.8s" begin=".3s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+      <circle class="pkt p" r="5"><animateMotion dur="1.4s" begin=".6s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+      <circle class="pkt" r="5"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+    </svg>
+  </div>
+</div>
 
-        <div class="two-col skills-and-highlights-container">
-            <div class="skills-container hidden">
-                <h3 class="sub-title">Skills</h3>
-                <div class="skills-list">
-                    <div class="skill">Python<div class="skill-bar">
-                            <div class="skill-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">Django<div class="skill-bar">
-                            <div class="skill-fill" style="width: 88%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">DRF<div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">Docker<div class="skill-bar">
-                            <div class="skill-fill" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="wrap figs">
+  <div class="fig rv" style="--d:0s"><b><span data-count="5">0</span><i>+</i></b><span>years building backends</span></div>
+  <div class="fig rv" style="--d:.1s"><b data-count="4">0</b><span>companies, all shipping DRF APIs</span></div>
+  <div class="fig rv" style="--d:.2s"><b data-count="3">0</b><span>open-source PyPI packages</span></div>
+  <div class="fig rv" style="--d:.3s"><b data-count="2">0</b><span>VS Code Marketplace extensions</span></div>
+</div>
+</header>
 
-            <div class="hidden">
-                <h3 class="sub-title">Highlights</h3>
-                <ul class="highlights">
-                    <li>Multi-DB Apps</li>
-                    <li>Dockerized Django microservices</li>
-                    <li>Redis</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<section class="band exp" id="experience"><div class="wrap">
+  <h2 class="rv">Where I've worked</h2>
+  <p class="lead rv">Six years across four Kerala product teams — from intern to the developer who trains the interns.</p>
+  <div class="tl" id="tl"><div class="fill" id="tlfill"></div>
+    <div class="job rv r">
+      <div class="when">Sep 2026 – Present</div>
+      <h3>Backend Developer <span class="badge now">Current</span></h3>
+      <p class="org">COEMS Solutions Pvt. Ltd · Infopark, Kochi</p>
+      <ul><li>Building backend APIs with Python, Django and Django REST Framework.</li></ul>
+    </div>
+    <div class="job rv r">
+      <div class="when">Mar 2024 – Aug 2026</div>
+      <h3>Backend Developer <span class="badge">Rising Star nominee 2025</span></h3>
+      <p class="org">Admaren Tech Pvt. Ltd · Infopark, Kochi</p>
+      <ul><li>Implemented gRPC services for communication between microservices.</li><li>Built and maintained backend APIs with Django REST Framework.</li><li>Nominated for the Rising Star appreciation in 2025.</li></ul>
+    </div>
+    <div class="job rv r">
+      <div class="when">Nov 2021 – Feb 2024</div>
+      <h3>Python Developer <span class="badge">Budding Performer 2022</span></h3>
+      <p class="org">Aatoon Solutions Pvt. Ltd · Carnival Infopark, Kochi</p>
+      <ul><li>Designed databases for web applications.</li><li>Built backend APIs with Django REST Framework.</li><li>Received the Budding Performer award in 2022.</li></ul>
+    </div>
+    <div class="job rv r">
+      <div class="when">Feb 2021 – Sep 2021</div>
+      <h3>Python Developer</h3>
+      <p class="org">Scopos Technologies Pvt. Ltd · Kollam</p>
+      <ul><li>Built backend APIs with Django REST Framework.</li><li>Trained and mentored interns.</li></ul>
+    </div>
+    <div class="job rv r">
+      <div class="when">Jan 2020 – Feb 2021</div>
+      <h3>Python Intern</h3>
+      <p class="org">Scopos Technologies Pvt. Ltd · Kollam</p>
+      <ul><li>Year-long internship in Python and Django web development.</li></ul>
+    </div>
+  </div>
+</div></section>
 
-    <section id="projects" class="section container">
-        <h2 class="section-title hidden">Projects</h2>
-        <div class="project-grid">
-            <div class="card hidden">
-                <h3 class="project-title">Django REST Exception Handler</h3>
-                <p class="project-desc">
-                    The Django REST Framework Exception Handler is a Python package designed to
-                    streamline exception handling within Django REST Framework applications. It ensures a consistent
-                    format for error responses by structuring them in a predefined JSON format.
-                </p>
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip/django_rest_exception_handler" class="card small"
-                        target="_blank">GitHub</a>
-                    <a href="https://pypi.org/project/django-rest-exception-handler/" class="card small"
-                        target="_blank">PyPI</a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Django REST token expiry</h3>
-                <p class="project-desc">
-                    Django REST Token Expiry is a Python package designed to add token expiration functionality to
-                    Django REST Framework's default token authentication system. This package allows developers to set
-                    expiry durations for authentication tokens, enhancing security by automatically invalidating tokens
-                    after a specified period.
-                </p>
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip/django_rest_token_expiry" class="card small"
-                        target="_blank">GitHub</a>
-                    <a href="https://pypi.org/project/django-rest-token-expiry/" class="card small"
-                        target="_blank">PyPI</a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Django Rest Framework query tools</h3>
-                <p class="project-desc">
-                    The package allows developers to enhance filtering capabilities within Django Rest Framework views
-                    by simply specifying the desired filter fields. By incorporating the URLFilter into views or adding
-                    it to the Django Rest Framework settings, the package streamlines the filtering process.
-                </p>
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip/django_rest_framework_query_tools" class="card small"
-                        target="_blank">GitHub</a>
-                    <a href="https://pypi.org/project/django-rest-framework-query-tools/" class="card small"
-                        target="_blank">PyPI</a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Basic markdown snippets extension for vscode</h3>
-                <p class="project-desc">
-                    This extension is designed to enhance your Markdown editing experience by providing a collection of
-                    useful and time-saving code snippets that you can easily insert into your Markdown documents.
-                    Whether you're writing technical documentation, blog posts, or just taking notes, these snippets
-                    will help you format your content quickly and efficiently
-                </p>
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip/markdown-snippets" class="card small"
-                        target="_blank">GitHub</a>
-                    <a href="https://marketplace.visualstudio.com/items?itemName=JoePhilip.markdown-code-snippets"
-                        class="card small" target="_blank">Marketplace</a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Python django code snippets for VSCode</h3>
-                <p class="project-desc">
-                    Python django rest framework code snippets for VSCode is a VSCode extension that provides a
-                    collection of useful code snippets for Python programming in Django rest framework. The extension
-                    includes snippets for commonly used code segments, such as loops, functions, file handling, regular
-                    expressions, and more. With this extension, you can save valuable time and effort by quickly
-                    inserting these code segments into your projects, without the need to manually type them out.
-                </p>
-                <div class="quick-links">
-                    <a href="https://gitlab.com/joe-philip/python_code_snippets" class="card small"
-                        target="_blank">GitLab</a>
-                    <a href="https://marketplace.visualstudio.com/items?itemName=JoePhilip.pythondjangocodesnippet&ssr=false#overview"
-                        class="card small" target="_blank">Marketplace</a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Random password generator</h3>
-                <p class="project-desc">
-                    Developed a robust password generator application using ReactJS for the front-end and Django for the
-                    backend. This powerful tool creates secure, random passwords for users. With a combination of
-                    front-end user-friendliness and back-end security, it's an ideal solution for enhancing online
-                    safety. Protect your accounts with strong, unique passwords generated on the fly.
-                </p>
-                <div class="quick-links">
-                    <a href="https://joe-philip.github.io/random_password_generator_react" class="card small"
-                        target="_blank">
-                        Live Demo
-                    </a>
-                    <a href="https://github.com/joe-philip/random_password_generator_django" class="card small"
-                        target="_blank">
-                        Backend Repo
-                    </a>
-                </div>
-            </div>
-            <div class="card hidden">
-                <h3 class="project-title">Basic Calculator using Python</h3>
-                <p class="project-desc">
-                    Crafted a versatile calculator app using Python's Tkinter module. This user-friendly tool
-                    streamlines arithmetic tasks, enabling quick calculations for addition, subtraction,
-                    multiplication, and division. Its intuitive interface caters to daily mathematical needs.
-                    Whether you're a student or professional, this app simplifies number crunching.
-                </p>
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip/calcPythonTkinter" class="card small" target="_blank">
-                        Repo
-                    </a>
-                </div>
-            </div>
-    </section>
+<section class="band" id="skills"><div class="wrap">
+  <h2 class="rv">What I work with</h2>
+  <p class="lead rv">Strongest tools are filled in.</p>
+  <div class="skills">
+    <div class="sk rv" style="--d:0s"><h3>Backend</h3><div class="chips" id="c1"></div></div>
+    <div class="sk rv" style="--d:.12s"><h3>Tools &amp; platforms</h3><div class="chips" id="c2"></div></div>
+    <div class="sk rv" style="--d:.24s"><h3>Ways of working</h3><div class="chips" id="c3"></div></div>
+  </div>
+</div></section>
 
-    <section id="experience" class="section container">
-        <h2 class="section-title hidden">Experience</h2>
-        <div class="exp-list">
-            <div class="card hidden">
-                <strong>Backend Developer — Admaren Tech</strong>
-                <div class="exp-date">Mar 2024 – Present</div>
-                <ul class="exp-details">
-                    <li>Develop efficient API's for web apps.</li>
-                </ul>
-            </div>
-            <div class="card hidden">
-                <strong>Python Developer — Aatoon Solutions</strong>
-                <div class="exp-date">Nov 2021 – Feb 2024</div>
-                <ul class="exp-details">
-                    <li>Develop Database diagrams for projects.</li>
-                    <li>Develop REST API's for web apps.</li>
-                    <li>Add custom features for API's.</li>
-                    <li>Define custom functionalities for django projects.</li>
-                    <li>Define web sockets in web apps for real-time app features.</li>
-                    <li>Integrate external API services inside apps.</li>
-                    <li>Provide python training to interns.</li>
-                    <li>Implement server side cache.</li>
-                </ul>
-            </div>
-            <div class="card hidden">
-                <strong>Scopos Technologies</strong>
-                <div class="exp-date">Feb 2021 – September 2024</div>
-                <ul class="exp-details">
-                    <li>Provide python training to new interns.</li>
-                    <li>Design Responsive HTML forms for projects.</li>
-                    <li>Work part in Django projects.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<section class="band exp" id="projects"><div class="wrap">
+  <h2 class="rv">Things I've built</h2>
+  <p class="lead rv">Open-source packages other Django developers install, editor extensions, and a few full-stack side projects.</p>
+  <div class="projs" id="projs"></div>
+</div></section>
 
-    <section id="contact" class="section container">
-        <h2 class="section-title hidden">Contact</h2>
-        <div class="two-col">
-            <div class="card hidden">
-                Kollam, Kerala<br>
-                Phone: +91 96336 89769<br>
-                Email: joe.philip@hotmail.co.in
-                <div class="quick-links">
-                    <a href="https://github.com/joe-philip" class="card small">GitHub</a>
-                    <a href="https://linkedin.com/in/joe-philip" class="card small">LinkedIn</a>
-                </div>
-            </div>
+<section class="band" id="education"><div class="wrap two">
+  <div>
+    <h2 class="rv">Education</h2>
+    <ul class="rows">
+      <li class="rv"><div><b>Higher Secondary (+2), Computer Science</b><span>St. Aloysius H.S.S, Kollam · 65%</span></div><span class="d">2011 – 2013</span></li>
+      <li class="rv"><div><b>SSLC (Class 10)</b><span>St. Aloysius H.S.S, Kollam · 72%</span></div><span class="d">2010 – 2011</span></li>
+    </ul>
+    <h2 class="rv" style="margin-top:48px">Languages</h2>
+    <ul class="rows">
+      <li class="rv"><div><b>Malayalam</b></div><span class="d">Native</span></li>
+      <li class="rv"><div><b>English</b></div><span class="d">Conversational</span></li>
+    </ul>
+  </div>
+  <div>
+    <h2 class="rv">Certifications</h2>
+    <ul class="rows" id="certs"></ul>
+  </div>
+</div></section>
 
-            <!-- <form class="card" onsubmit="sendMail(event)">
-                <label>Your name</label>
-                <input class="input" />
+<section class="band contact" id="contact"><div class="wrap">
+  <div class="rv l">
+    <h2>Let's build something <span>reliable.</span></h2>
+    <p>I'm open to Python and backend developer roles — in India or abroad, remote, hybrid or on-site, and happy to relocate.</p>
+  </div>
+  <div class="clist rv r">
+    <a href="mailto:joe1995philip@gmail.com"><small>Email</small><b>joe1995philip@gmail.com</b></a>
+    <a href="tel:+919633689769"><small>Phone</small><b>+91 9633 689 769</b></a>
+    <a href="https://www.linkedin.com/in/joe-philip/" target="_blank" rel="noopener"><small>LinkedIn</small><b>in/joe-philip</b></a>
+    <a href="https://github.com/joe-philip" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/joe-philip</b></a>
+  </div>
+</div></section>
+<footer>© 2026 Joe Philip · Built with HTML, CSS and a little JavaScript</footer>
 
-                <label>Message</label>
-                <textarea rows="4" class="input"></textarea>
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const chips=(id,list)=>{document.getElementById(id).innerHTML=list.map(([t,k])=>`<span class="${k?'k':''}">${esc(t)}</span>`).join('')};
+chips('c1',[['Python',1],['Django',1],['Django REST Framework',1],['REST API design',1],['gRPC',1],['Database design',1],['Celery',0],['Redis',0],['RabbitMQ',0]]);
+chips('c2',[['Docker',1],['Git',1],['Linux',1],['GitHub',0],['GitLab',0],['Apache',0],['VS Code',0],['Claude Code',0],['Slack',0],['Microsoft Teams',0]]);
+chips('c3',[['Problem-solving',1],['Analytical thinking',1],['Debugging & troubleshooting',1],['Mentoring interns',0],['Open-source publishing',0]]);
 
-                <button class="btn-primary" type="submit">Send</button>
-            </form> -->
-        </div>
-    </section>
+const projs=[
+ ['PyPI package','Django REST Exception Handler','Standardises Django REST Framework error responses into one consistent JSON format.',[['PyPI','https://pypi.org/project/django-rest-exception-handler/'],['GitHub','https://github.com/joe-philip/django_rest_exception_handler']]],
+ ['PyPI package','Django REST Token Expiry','Adds token expiration to DRF token authentication, so stale tokens stop working.',[['PyPI','https://pypi.org/project/django-rest-token-expiry/'],['GitHub','https://github.com/joe-philip/django_rest_token_expiry']]],
+ ['PyPI package','DRF Query Tools','Makes filtering on Django REST Framework results easy to configure.',[['PyPI','https://pypi.org/project/django-rest-framework-query-tools/'],['GitHub','https://github.com/joe-philip/django_rest_framework_query_tools']]],
+ ['VS Code extension','Python Django Code Snippets','Snippets for Python, Django and DRF that cut boilerplate in everyday backend work.',[['GitLab','https://gitlab.com/joe-philip/python_code_snippets']]],
+ ['VS Code extension','Markdown Code Snippets','Snippets that speed up writing READMEs and docs in Markdown.',[['GitHub','https://github.com/joe-philip/markdown-snippets']]],
+ ['Full stack','Random Password Generator','A React.js front end talking to a Django back end.',[['Live demo','https://joe-philip.github.io/random_password_generator_react'],['Backend','https://github.com/joe-philip/random_password_generator_django']]],
+ ['Website','Personal Portfolio','My earlier portfolio site, built with React.js.',[['Visit','https://joe-philip.github.io/']]],
+ ['Desktop app','Basic Calculator','A desktop calculator written in Python with Tkinter.',[]]
+];
+document.getElementById('projs').innerHTML=projs.map(([t,n,d,l],i)=>`<article class="proj rv" style="--d:${(i%3)*.1}s"><span class="type">${esc(t)}</span><h3>${esc(n)}</h3><p>${esc(d)}</p>${l.length?`<div class="ls">${l.map(([a,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(a)} ↗</a>`).join('')}</div>`:''}</article>`).join('');
 
-    <footer>© 2025 Joe Philip. All rights reserved.</footer>
-    <script src="script.js"></script>
+const certs=[
+ ['Python for Everybody Specialization','Coursera · 5 courses, 92.9%–100%','Oct 2020'],
+ ['Crash Course on Python','Coursera · 98.5%','Dec 2020'],
+ ['Git and GitHub For Beginners','Udemy','Feb 2021'],
+ ['Practical Git: for Absolute Beginners','Udemy','Jan 2021'],
+ ['Certificate Course in Python (Basics)','G-TEC','Feb 2020'],
+ ['Certificate in Advanced PHP','G-DAC','Apr 2018']
+];
+document.getElementById('certs').innerHTML=certs.map(([n,s,d])=>`<li class="rv"><div><b>${esc(n)}</b><span>${esc(s)}</span></div><span class="d">${esc(d)}</span></li>`).join('');
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* counters */
+const count=el=>{const end=+el.dataset.count;if(reduce){el.textContent=end;return}const t0=performance.now();const step=t=>{const p=Math.min((t-t0)/1100,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+
+/* reveal on scroll */
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>{for(const e of es){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target)}}},{threshold:.15,rootMargin:'0px 0px -40px 0px'}):null;
+document.querySelectorAll('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+if(!io)document.querySelectorAll('[data-count]').forEach(el=>el.textContent=el.dataset.count);
+
+/* progress bar, nav state, timeline fill, active link */
+const bar=document.getElementById('progress'),nav=document.getElementById('nav'),tl=document.getElementById('tl'),fill=document.getElementById('tlfill');
+const secs=[...document.querySelectorAll('section[id]')],links=[...document.querySelectorAll('.links a')];
+let ticking=false;
+const onScroll=()=>{
+  const h=document.documentElement,max=h.scrollHeight-innerHeight;
+  bar.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+  nav.classList.toggle('scrolled',scrollY>10);
+  const r=tl.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.6-r.top)/r.height,0),1);
+  fill.style.transform=`scaleY(${reduce?1:p})`;
+  let cur='';for(const s of secs)if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id;
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+  ticking=false};
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+addEventListener('resize',onScroll);onScroll();
+}
+</script>
 </body>
-
 </html>
